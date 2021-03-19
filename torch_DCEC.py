@@ -61,7 +61,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args)
 
-    if args.mode == 'pretrain' and not args.pretrain:
+    if args.mode == 'pretrain' and not args.pretrain:    
         print("Nothing to do :(")
         exit()
 
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     net_is_path = True
     if not pretrain:
         try:
-            int(args.pretrained_net)
+            int(args.pretrained_net)    
             idx = args.pretrained_net
             net_is_path = False
         except:
@@ -84,9 +84,9 @@ if __name__ == "__main__":
     dirs = ['runs', 'reports', 'nets']
     list(map(lambda x: os.makedirs(x, exist_ok=True), dirs))
 
-    # Net architecture
+    # Net architecture  选择不同结构的CAE
     model_name = args.net_architecture
-    # Indexing (for automated reports saving) - allows to run many trainings and get all the reports collected
+    # Indexing (for automated reports saving) - allows to run many trainings and get all the reports collected（记录训练的序号）
     if pretrain or (not pretrain and net_is_path):
         reports_list = sorted(os.listdir('reports'), reverse=True)
         if reports_list:
@@ -100,7 +100,7 @@ if __name__ == "__main__":
         except NameError:
             idx = 1
 
-    # Base filename
+    # Base filename  把每一次训练都记录在reports里面 以model_name加序号进行标识
     name = model_name + '_' + str(idx).zfill(3)
 
     # Filenames for report and weights
@@ -109,13 +109,13 @@ if __name__ == "__main__":
     pretrained = name + '_pretrained.pt'
 
     # Arrange filenames for report, network weights, pretrained network weights
-    name_txt = os.path.join('reports', name_txt)
+    name_txt = os.path.join('reports', name_txt) #分别保存在reports和nets文件夹下
     name_net = os.path.join('nets', name_net)
     if net_is_path and not pretrain:
         pretrained = args.pretrained_net
     else:
         pretrained = os.path.join('nets', pretrained)
-    if not pretrain and not os.path.isfile(pretrained):
+    if not pretrain and not os.path.isfile(pretrained):     #如果没有选择预训练且没有训练好的网络
         print("No pretrained weights, try again choosing pretrained network or create new with pretrain=True")
 
     model_files = [name_net, pretrained]
@@ -123,9 +123,9 @@ if __name__ == "__main__":
 
     # Open file
     if pretrain:
-        f = open(name_txt, 'w')
+        f = open(name_txt, 'w')     #以写的方式打开文件
     else:
-        f = open(name_txt, 'a')
+        f = open(name_txt, 'a')     #以追加的方式打开文件
     params['txt_file'] = f
 
     # Delete tensorboard entry if exist (not to overlap as the charts become unreadable)
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     else:
         params['writer'] = None
 
-    # Hyperparameters
+    # Hyperparameters  设置超参数
 
     # Used dataset
     dataset = args.dataset
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     # Number of clusters
     num_clusters = args.num_clusters
 
-    # Report for settings
+    # Report for settings  在reports里打印设置
     tmp = "Training the '" + model_name + "' architecture"
     utils.print_both(f, tmp)
     tmp = "\n" + "The following parameters are used:"

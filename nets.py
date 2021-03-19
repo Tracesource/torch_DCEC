@@ -10,9 +10,9 @@ class ClusterlingLayer(nn.Module):
         self.out_features = out_features
         self.alpha = alpha
         self.weight = nn.Parameter(torch.Tensor(self.out_features, self.in_features))
-        self.weight = nn.init.xavier_uniform_(self.weight)
+        self.weight = nn.init.xavier_uniform_(self.weight)      #对参数进行初始化
 
-    def forward(self, x):
+    def forward(self, x):         #计算软标签q
         x = x.unsqueeze(1) - self.weight
         x = torch.mul(x, x)
         x = torch.sum(x, dim=2)
@@ -28,7 +28,7 @@ class ClusterlingLayer(nn.Module):
             self.in_features, self.out_features, self.alpha
         )
 
-    def set_weight(self, tensor):
+    def set_weight(self, tensor):    #除了初始化也可以直接设置系数
         self.weight = nn.Parameter(tensor)
 
 
@@ -42,14 +42,14 @@ class CAE_3(nn.Module):
         self.num_clusters = num_clusters
         self.input_shape = input_shape
         self.filters = filters
-        self.conv1 = nn.Conv2d(input_shape[2], filters[0], 5, stride=2, padding=2, bias=bias)
+        self.conv1 = nn.Conv2d(input_shape[2], filters[0], 5, stride=2, padding=2, bias=bias)  #输入通道数为3，输出通道为32
         if leaky:
             self.relu = nn.LeakyReLU(negative_slope=neg_slope)
         else:
             self.relu = nn.ReLU(inplace=False)
         self.conv2 = nn.Conv2d(filters[0], filters[1], 5, stride=2, padding=2, bias=bias)
         self.conv3 = nn.Conv2d(filters[1], filters[2], 3, stride=2, padding=0, bias=bias)
-        lin_features_len = ((input_shape[0]//2//2-1) // 2) * ((input_shape[0]//2//2-1) // 2) * filters[2]
+        lin_features_len = ((input_shape[0]//2//2-1) // 2) * ((input_shape[0]//2//2-1) // 2) * filters[2] #计算全连接之后的长度
         self.embedding = nn.Linear(lin_features_len, num_clusters, bias=bias)
         self.deembedding = nn.Linear(num_clusters, lin_features_len, bias=bias)
         out_pad = 1 if input_shape[0] // 2 // 2 % 2 == 0 else 0
@@ -69,7 +69,7 @@ class CAE_3(nn.Module):
         self.sig = nn.Sigmoid()
         self.tanh = nn.Tanh()
 
-    def forward(self, x):
+    def forward(self, x):  #执行网络
         x = self.conv1(x)
         x = self.relu1_1(x)
         x = self.conv2(x)
@@ -79,10 +79,10 @@ class CAE_3(nn.Module):
             x = self.sig(x)
         else:
             x = self.relu3_1(x)
-        x = x.view(x.size(0), -1)
-        x = self.embedding(x)
-        extra_out = x
-        clustering_out = self.clustering(x)
+        x = x.view(x.size(0), -1)    #将张量x变成全连接的（flatten）
+        x = self.embedding(x)   #全连接层变成长度为10的张量
+        extra_out = x      #保存嵌入特征
+        clustering_out = self.clustering(x)   #得到聚类结果
         x = self.deembedding(x)
         x = self.relu1_2(x)
         x = x.view(x.size(0), self.filters[2], ((self.input_shape[0]//2//2-1) // 2), ((self.input_shape[0]//2//2-1) // 2))
@@ -106,7 +106,7 @@ class CAE_bn3(nn.Module):
         self.input_shape = input_shape
         self.filters = filters
         self.conv1 = nn.Conv2d(input_shape[2], filters[0], 5, stride=2, padding=2, bias=bias)
-        self.bn1_1 = nn.BatchNorm2d(filters[0])
+        self.bn1_1 = nn.BatchNorm2d(filters[0])     #BN层
         if leaky:
             self.relu = nn.LeakyReLU(negative_slope=neg_slope)
         else:
