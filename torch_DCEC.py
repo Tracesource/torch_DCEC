@@ -358,13 +358,13 @@ if __name__ == "__main__":
 
     criteria = [criterion_1, criterion_2]
 
-    optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=rate, weight_decay=weight)
+    optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=rate, weight_decay=weight)  #使用filter根据requires_grad对参数进行过滤
 
     optimizer_pretrain = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=rate_pretrain, weight_decay=weight_pretrain)
 
     optimizers = [optimizer, optimizer_pretrain]
 
-    scheduler = lr_scheduler.StepLR(optimizer, step_size=sched_step, gamma=sched_gamma)
+    scheduler = lr_scheduler.StepLR(optimizer, step_size=sched_step, gamma=sched_gamma)   #基于epoch调整学习率（衰减）
     scheduler_pretrain = lr_scheduler.StepLR(optimizer_pretrain, step_size=sched_step_pretrain, gamma=sched_gamma_pretrain)
 
     schedulers = [scheduler, scheduler_pretrain]
