@@ -235,7 +235,7 @@ if __name__ == "__main__":
     tmp = "Bias:\t" + str(args.bias)
     utils.print_both(f, tmp)
 
-    # Data preparation
+    # Data preparation  train数据集train属性为true，test数据集train属性为false，full数据集full属性为true
     if dataset == 'MNIST-train':
         # Uses slightly modified torchvision MNIST class
         import mnist
@@ -245,11 +245,12 @@ if __name__ == "__main__":
         tmp = "Image size used:\t{0}x{1}".format(img_size[0], img_size[1])
         utils.print_both(f, tmp)
 
-        dataset = mnist.MNIST('../data', train=True, download=True,
+        dataset = mnist.MNIST('../data', train=True, download=True,     #MNIST继承torch.utils.data.Dataset
                               transform=transforms.Compose([
                                                            transforms.ToTensor(),
                                                            # transforms.Normalize((0.1307,), (0.3081,))
                                                            ]))
+                            #transform.Compose将变换组合起来，ToTensor将图片或者numpy数组转化为tensor数据（从[0,255]到[0,1]），Normalize进行归一化，从[0,1]到[-1,1]
 
         dataloader = torch.utils.data.DataLoader(dataset,
             batch_size=batch, shuffle=False, num_workers=workers)
@@ -266,7 +267,7 @@ if __name__ == "__main__":
         tmp = "Image size used:\t{0}x{1}".format(img_size[0], img_size[1])
         utils.print_both(f, tmp)
 
-        dataset = mnist.MNIST('../data', train=False, download=True,
+        dataset = mnist.MNIST('../data', train=False, download=True,   #测试集不需要训练
                               transform=transforms.Compose([
                                   transforms.ToTensor(),
                                   # transforms.Normalize((0.1307,), (0.3081,))
@@ -320,7 +321,7 @@ if __name__ == "__main__":
                 transforms.Resize(img_size[0:2]),
                 # transforms.RandomHorizontalFlip(),
                 transforms.ToTensor(),
-                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+                transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])  #对额外加入的数据进行处理
             ])
 
         # Read data from selected folder and apply transformations
@@ -337,23 +338,23 @@ if __name__ == "__main__":
     params['dataset_size'] = dataset_size
 
     # GPU check
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  #torch.device包含一个设备类型（‘cpu’或‘cuda’）和可选的设备序号。
     tmp = "\nPerforming calculations on:\t" + str(device)
     utils.print_both(f, tmp + '\n')
     params['device'] = device
 
     # Evaluate the proper model
     to_eval = "nets." + model_name + "(img_size, num_clusters=num_clusters, leaky = args.leaky, neg_slope = args.neg_slope)"
-    model = eval(to_eval)
+    model = eval(to_eval)   #model.train在训练的时候用到，model.eval在测试的时候用到，前者启用BatchNormalization和Dropout，后者不用
 
     # Tensorboard model representation
     # if board:
     #     writer.add_graph(model, torch.autograd.Variable(torch.Tensor(batch, img_size[2], img_size[0], img_size[1])))
 
-    model = model.to(device)
+    model = model.to(device) #将模型加载到指定设备上
     # Reconstruction loss
     criterion_1 = nn.MSELoss(size_average=True)
-    # Clustering loss
+    # Clustering loss  在这里可以更改损失函数为OT
     criterion_2 = nn.KLDivLoss(size_average=False)
 
     criteria = [criterion_1, criterion_2]
