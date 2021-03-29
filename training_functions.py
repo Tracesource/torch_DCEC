@@ -12,7 +12,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
     # Note the time
     since = time.time()
 
-    # Unpack parameters
+    # Unpack parameters   将外部传入的参数赋值
     writer = params['writer']
     if writer is not None: board = True
     txt_file = params['txt_file']
@@ -36,8 +36,8 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
             if pretrained_model:
                 break
             else:
-                for layer in model.children():
-                    if hasattr(layer, 'reset_parameters'):
+                for layer in model.children():  #model.children()是迭代器，仅会遍历当前层。
+                    if hasattr(layer, 'reset_parameters'):   #判断对象是否包含对应属性
                         layer.reset_parameters()
         model = pretrained_model
     else:
