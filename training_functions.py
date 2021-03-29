@@ -38,7 +38,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
             else:
                 for layer in model.children():  #model.children()是迭代器，仅会遍历当前层。
                     if hasattr(layer, 'reset_parameters'):   #判断对象是否包含对应属性
-                        layer.reset_parameters()
+                        layer.reset_parameters()      #reset函数的意义？？
         model = pretrained_model
     else:
         try:
@@ -53,11 +53,11 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
 
     utils.print_both(txt_file, '\nBegin clusters training')
 
-    # Prep variables for weights and accuracy of the best model
+    # Prep variables for weights and accuracy of the best model 定义两个参数存储最好的结果
     best_model_wts = copy.deepcopy(model.state_dict())
     best_loss = 10000.0
 
-    # Initial target distribution
+    # Initial target distribution  初始化目标分布
     utils.print_both(txt_file, '\nUpdating target distribution')
     output_distribution, labels, preds_prev = calculate_predictions(model, copy.deepcopy(dl), params)
     target_distribution = target(output_distribution)
@@ -100,7 +100,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
 
             inputs = inputs.to(device)
 
-            # Uptade target distribution, chack and print performance
+            # Uptade target distribution, chack and print performance 只在指定间隔步更新
             if (batch_num - 1) % update_interval == 0 and not (batch_num == 1 and epoch == 0):
                 utils.print_both(txt_file, '\nUpdating target distribution:')
                 output_distribution, labels, preds = calculate_predictions(model, dataloader, params)
@@ -117,7 +117,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
                     writer.add_scalar('/Acc', acc, niter)
                     update_iter += 1
 
-                # check stop criterion
+                # check stop criterion 更新完分布并得到聚类结果后检查迭代是否停止
                 delta_label = np.sum(preds != preds_prev).astype(np.float32) / preds.shape[0]
                 preds_prev = np.copy(preds)
                 if delta_label < tol:
@@ -136,13 +136,13 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
             # Calculate losses and backpropagate
             with torch.set_grad_enabled(True):
                 outputs, clusters, _ = model(inputs)
-                loss_rec = criteria[0](outputs, inputs)
-                loss_clust = gamma *criteria[1](torch.log(clusters), tar_dist) / batch
+                loss_rec = criteria[0](outputs, inputs)    #计算重构误差
+                loss_clust = gamma *criteria[1](torch.log(clusters), tar_dist) / batch   #计算聚类损失
                 loss = loss_rec + loss_clust
                 loss.backward()
                 optimizers[0].step()
 
-            # For keeping statistics
+            # For keeping statistics 将epoch内的误差累加
             running_loss += loss.item() * inputs.size(0)
             running_loss_rec += loss_rec.item() * inputs.size(0)
             running_loss_clust += loss_clust.item() * inputs.size(0)
@@ -208,7 +208,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
     utils.print_both(txt_file, 'Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
 
-    # load best model weights
+    # load best model weights 把结果最好的参数保存下来
     model.load_state_dict(best_model_wts)
     return model
 
@@ -338,7 +338,7 @@ def kmeans(model, dataloader, params):
     km.fit_predict(output_array)
     # Update clustering layer weights
     weights = torch.from_numpy(km.cluster_centers_)
-    model.clustering.set_weight(weights.to(params['device']))
+    model.clustering.set_weight(weights.to(params['device']))  #在进行kmeans之后马上更新参数
     # torch.cuda.empty_cache()
 
 
