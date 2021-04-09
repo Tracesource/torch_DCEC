@@ -42,6 +42,7 @@ The algorithm offers a plenty of options for adjustments:
     
     Fot full training you can specify whether to use pretraining phase ```--pretrain True``` or use saved network ```--pretrain False``` and 
     ```--pretrained net ("path" or idx)``` with path or index (see catalog structure) of the pretrained network
+    python torch_DCEC.py --pretrain False --pretrained_net "CAE_3_007_pretrained.pt"
 2. Dataset choice:
     + MNIST - train, test, full
     + Custom dataset - use the following data structure (characteristic for PyTorch):

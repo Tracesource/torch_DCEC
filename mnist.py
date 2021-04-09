@@ -53,8 +53,8 @@ class MNIST(data.Dataset):
             raise RuntimeError('Dataset not found.' +
                                ' You can use download=True to download it')
 
-        self.train_data, self.train_labels = torch.load(os.path.join(self.root, self.processed_folder, self.training_file))
-        self.test_data, self.test_labels = torch.load(os.path.join(self.root, self.processed_folder, self.test_file))
+        self.train_data, self.train_labels = torch.load(os.path.join(self.root, self.processed_folder, self.training_file).replace('\\', '/'))
+        self.test_data, self.test_labels = torch.load(os.path.join(self.root, self.processed_folder, self.test_file).replace('\\', '/'))
 
         if full:
             self.train_data = np.concatenate((self.train_data, self.test_data), axis=0)
@@ -104,8 +104,8 @@ class MNIST(data.Dataset):
             return len(self.test_data)
 
     def _check_exists(self):
-        return os.path.exists(os.path.join(self.root, self.processed_folder, self.training_file)) and \
-            os.path.exists(os.path.join(self.root, self.processed_folder, self.test_file))
+        return os.path.exists(os.path.join(self.root, self.processed_folder, self.training_file).replace('\\', '/')) and \
+            os.path.exists(os.path.join(self.root, self.processed_folder, self.test_file).replace('\\', '/'))
 
     def download(self):
         """Download the MNIST data if it doesn't exist in processed_folder already."""
@@ -116,41 +116,43 @@ class MNIST(data.Dataset):
             return
 
         # download files
-        try:
-            os.makedirs(os.path.join(self.root, self.raw_folder))
-            os.makedirs(os.path.join(self.root, self.processed_folder))
-        except OSError as e:
-            if e.errno == errno.EEXIST:
-                pass
-            else:
-                raise
+        # try:
+        #     os.makedirs(os.path.join(self.root, self.raw_folder))
+        #     os.makedirs(os.path.join(self.root, self.processed_folder))
+        # except OSError as e:
+        #     if e.errno == errno.EEXIST:
+        #         pass
+        #     else:
+        #         raise
 
-        for url in self.urls:
-            print('Downloading ' + url)
-            data = urllib.request.urlopen(url)
-            filename = url.rpartition('/')[2]
-            file_path = os.path.join(self.root, self.raw_folder, filename)
-            with open(file_path, 'wb') as f:
-                f.write(data.read())
-            with open(file_path.replace('.gz', ''), 'wb') as out_f, \
-                    gzip.GzipFile(file_path) as zip_f:
-                out_f.write(zip_f.read())
-            os.unlink(file_path)
+        # for url in self.urls:
+        #     print('Downloading ' + url)
+        #     data = urllib.request.urlopen(url)
+        #     filename = url.rpartition('/')[2]
+        #     file_path = os.path.join(self.root, self.raw_folder, filename)
+        #     with open(file_path, 'wb') as f:
+        #         f.write(data.read())
+        #     with open(file_path.replace('.gz', ''), 'wb') as out_f, \
+        #             gzip.GzipFile(file_path) as zip_f:
+        #         out_f.write(zip_f.read())
+        #     os.unlink(file_path)
 
         # process and save as torch files
         print('Processing...')
+        
+
 
         training_set = (
-            read_image_file(os.path.join(self.root, self.raw_folder, 'train-images-idx3-ubyte')),
-            read_label_file(os.path.join(self.root, self.raw_folder, 'train-labels-idx1-ubyte'))
+            read_image_file(os.path.join(self.root, self.raw_folder, 'train-images.idx3-ubyte').replace('\\', '/')),
+            read_label_file(os.path.join(self.root, self.raw_folder, 'train-labels.idx1-ubyte').replace('\\', '/'))
         )
         test_set = (
-            read_image_file(os.path.join(self.root, self.raw_folder, 't10k-images-idx3-ubyte')),
-            read_label_file(os.path.join(self.root, self.raw_folder, 't10k-labels-idx1-ubyte'))
+            read_image_file(os.path.join(self.root, self.raw_folder, 't10k-images.idx3-ubyte').replace('\\', '/')),
+            read_label_file(os.path.join(self.root, self.raw_folder, 't10k-labels.idx1-ubyte').replace('\\', '/'))
         )
-        with open(os.path.join(self.root, self.processed_folder, self.training_file), 'wb') as f:
+        with open(os.path.join(self.root, self.processed_folder, self.training_file).replace('\\', '/'), 'wb') as f:
             torch.save(training_set, f)
-        with open(os.path.join(self.root, self.processed_folder, self.test_file), 'wb') as f:
+        with open(os.path.join(self.root, self.processed_folder, self.test_file).replace('\\', '/'), 'wb') as f:
             torch.save(test_set, f)
 
         print('Done!')
@@ -242,8 +244,8 @@ class EMNIST(MNIST):
 
         # download files
         try:
-            os.makedirs(os.path.join(self.root, self.raw_folder))
-            os.makedirs(os.path.join(self.root, self.processed_folder))
+            os.makedirs(os.path.join(self.root, self.raw_folder).replace('\\', '/'))
+            os.makedirs(os.path.join(self.root, self.processed_folder).replace('\\', '/'))
         except OSError as e:
             if e.errno == errno.EEXIST:
                 pass
@@ -253,8 +255,8 @@ class EMNIST(MNIST):
         print('Downloading ' + self.url)
         data = urllib.request.urlopen(self.url)
         filename = self.url.rpartition('/')[2]
-        raw_folder = os.path.join(self.root, self.raw_folder)
-        file_path = os.path.join(raw_folder, filename)
+        raw_folder = os.path.join(self.root, self.raw_folder).replace('\\', '/')
+        file_path = os.path.join(raw_folder, filename).replace('\\', '/')
         with open(file_path, 'wb') as f:
             f.write(data.read())
 
@@ -262,12 +264,12 @@ class EMNIST(MNIST):
         with zipfile.ZipFile(file_path) as zip_f:
             zip_f.extractall(raw_folder)
         os.unlink(file_path)
-        gzip_folder = os.path.join(raw_folder, 'gzip')
+        gzip_folder = os.path.join(raw_folder, 'gzip').replace('\\', '/')
         for gzip_file in os.listdir(gzip_folder):
             if gzip_file.endswith('.gz'):
                 print('Extracting ' + gzip_file)
-                with open(os.path.join(raw_folder, gzip_file.replace('.gz', '')), 'wb') as out_f, \
-                        gzip.GzipFile(os.path.join(gzip_folder, gzip_file)) as zip_f:
+                with open(os.path.join(raw_folder, gzip_file.replace('.gz', '')).replace('\\', '/'), 'wb') as out_f, \
+                        gzip.GzipFile(os.path.join(gzip_folder, gzip_file).replace('\\', '/')) as zip_f:
                     out_f.write(zip_f.read())
         shutil.rmtree(gzip_folder)
 
@@ -275,16 +277,16 @@ class EMNIST(MNIST):
         for split in self.splits:
             print('Processing ' + split)
             training_set = (
-                read_image_file(os.path.join(raw_folder, 'emnist-{}-train-images-idx3-ubyte'.format(split))),
-                read_label_file(os.path.join(raw_folder, 'emnist-{}-train-labels-idx1-ubyte'.format(split)))
+                read_image_file(os.path.join(raw_folder, 'emnist-{}-train-images-idx3-ubyte'.format(split)).replace('\\', '/')),
+                read_label_file(os.path.join(raw_folder, 'emnist-{}-train-labels-idx1-ubyte'.format(split)).replace('\\', '/'))
             )
             test_set = (
-                read_image_file(os.path.join(raw_folder, 'emnist-{}-test-images-idx3-ubyte'.format(split))),
-                read_label_file(os.path.join(raw_folder, 'emnist-{}-test-labels-idx1-ubyte'.format(split)))
+                read_image_file(os.path.join(raw_folder, 'emnist-{}-test-images-idx3-ubyte'.format(split)).replace('\\', '/')),
+                read_label_file(os.path.join(raw_folder, 'emnist-{}-test-labels-idx1-ubyte'.format(split)).replace('\\', '/'))
             )
-            with open(os.path.join(self.root, self.processed_folder, self._training_file(split)), 'wb') as f:
+            with open(os.path.join(self.root, self.processed_folder, self._training_file(split)).replace('\\', '/'), 'wb') as f:
                 torch.save(training_set, f)
-            with open(os.path.join(self.root, self.processed_folder, self._test_file(split)), 'wb') as f:
+            with open(os.path.join(self.root, self.processed_folder, self._test_file(split)).replace('\\', '/'), 'wb') as f:
                 torch.save(test_set, f)
 
         print('Done!')

@@ -353,9 +353,9 @@ if __name__ == "__main__":
 
     model = model.to(device) #将模型加载到指定设备上
     # Reconstruction loss
-    criterion_1 = nn.MSELoss(size_average=True)
+    criterion_1 = nn.MSELoss(reduction='mean')
     # Clustering loss  在这里可以更改损失函数为OT
-    criterion_2 = nn.KLDivLoss(size_average=False)
+    criterion_2 = nn.KLDivLoss(reduction='sum')
 
     criteria = [criterion_1, criterion_2]
 
