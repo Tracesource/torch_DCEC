@@ -1,0 +1,3079 @@
+Training the 'CAE_3' architecture
+
+The following parameters are used:
+Batch size:	256
+Number of workers:	4
+Learning rate:	0.001
+Pretraining learning rate:	0.001
+Weight decay:	0.0
+Pretraining weight decay:	0.0
+Scheduler steps:	200
+Scheduler gamma:	0.1
+Pretraining scheduler steps:	200
+Pretraining scheduler gamma:	0.1
+Number of epochs of training:	1000
+Number of epochs of pretraining:	300
+Clustering loss weight:	0.1
+Update interval for target distribution:	80
+Stop criterium tolerance:	0.01
+Number of clusters:	10
+Leaky relu:	True
+Leaky slope:	0.01
+Activations:	False
+Bias:	True
+
+Data preparation
+Reading data from: CIFAR-10 train dataset
+Image size used:	32x32
+Training set size:	10000
+
+Performing calculations on:	cuda:0
+
+Pretraining:	Epoch 1/300
+----------
+Pretraining:	Epoch: [1][10/40]	Loss 0.0251 (0.0360)	
+Pretraining:	Epoch: [1][20/40]	Loss 0.0176 (0.0282)	
+Pretraining:	Epoch: [1][30/40]	Loss 0.0152 (0.0242)	
+Pretraining:	Epoch: [1][40/40]	Loss 0.0139 (0.0220)	
+Pretraining:	 Loss: 0.0220
+
+Pretraining:	Epoch 2/300
+----------
+Pretraining:	Epoch: [2][10/40]	Loss 0.0132 (0.0138)	
+Pretraining:	Epoch: [2][20/40]	Loss 0.0130 (0.0135)	
+Pretraining:	Epoch: [2][30/40]	Loss 0.0123 (0.0132)	
+Pretraining:	Epoch: [2][40/40]	Loss 0.0120 (0.0130)	
+Pretraining:	 Loss: 0.0130
+
+Pretraining:	Epoch 3/300
+----------
+Pretraining:	Epoch: [3][10/40]	Loss 0.0116 (0.0119)	
+Pretraining:	Epoch: [3][20/40]	Loss 0.0117 (0.0118)	
+Pretraining:	Epoch: [3][30/40]	Loss 0.0113 (0.0117)	
+Pretraining:	Epoch: [3][40/40]	Loss 0.0112 (0.0117)	
+Pretraining:	 Loss: 0.0117
+
+Pretraining:	Epoch 4/300
+----------
+Pretraining:	Epoch: [4][10/40]	Loss 0.0110 (0.0112)	
+Pretraining:	Epoch: [4][20/40]	Loss 0.0112 (0.0112)	
+Pretraining:	Epoch: [4][30/40]	Loss 0.0110 (0.0112)	
+Pretraining:	Epoch: [4][40/40]	Loss 0.0108 (0.0112)	
+Pretraining:	 Loss: 0.0112
+
+Pretraining:	Epoch 5/300
+----------
+Pretraining:	Epoch: [5][10/40]	Loss 0.0108 (0.0110)	
+Pretraining:	Epoch: [5][20/40]	Loss 0.0111 (0.0110)	
+Pretraining:	Epoch: [5][30/40]	Loss 0.0109 (0.0110)	
+Pretraining:	Epoch: [5][40/40]	Loss 0.0107 (0.0110)	
+Pretraining:	 Loss: 0.0110
+
+Pretraining:	Epoch 6/300
+----------
+Pretraining:	Epoch: [6][10/40]	Loss 0.0107 (0.0109)	
+Pretraining:	Epoch: [6][20/40]	Loss 0.0110 (0.0109)	
+Pretraining:	Epoch: [6][30/40]	Loss 0.0108 (0.0109)	
+Pretraining:	Epoch: [6][40/40]	Loss 0.0106 (0.0109)	
+Pretraining:	 Loss: 0.0109
+
+Pretraining:	Epoch 7/300
+----------
+Pretraining:	Epoch: [7][10/40]	Loss 0.0107 (0.0108)	
+Pretraining:	Epoch: [7][20/40]	Loss 0.0109 (0.0108)	
+Pretraining:	Epoch: [7][30/40]	Loss 0.0107 (0.0108)	
+Pretraining:	Epoch: [7][40/40]	Loss 0.0105 (0.0108)	
+Pretraining:	 Loss: 0.0108
+
+Pretraining:	Epoch 8/300
+----------
+Pretraining:	Epoch: [8][10/40]	Loss 0.0106 (0.0108)	
+Pretraining:	Epoch: [8][20/40]	Loss 0.0108 (0.0108)	
+Pretraining:	Epoch: [8][30/40]	Loss 0.0106 (0.0108)	
+Pretraining:	Epoch: [8][40/40]	Loss 0.0104 (0.0108)	
+Pretraining:	 Loss: 0.0108
+
+Pretraining:	Epoch 9/300
+----------
+Pretraining:	Epoch: [9][10/40]	Loss 0.0105 (0.0107)	
+Pretraining:	Epoch: [9][20/40]	Loss 0.0108 (0.0107)	
+Pretraining:	Epoch: [9][30/40]	Loss 0.0105 (0.0107)	
+Pretraining:	Epoch: [9][40/40]	Loss 0.0104 (0.0107)	
+Pretraining:	 Loss: 0.0107
+
+Pretraining:	Epoch 10/300
+----------
+Pretraining:	Epoch: [10][10/40]	Loss 0.0104 (0.0106)	
+Pretraining:	Epoch: [10][20/40]	Loss 0.0107 (0.0106)	
+Pretraining:	Epoch: [10][30/40]	Loss 0.0105 (0.0106)	
+Pretraining:	Epoch: [10][40/40]	Loss 0.0103 (0.0106)	
+Pretraining:	 Loss: 0.0106
+
+Pretraining:	Epoch 11/300
+----------
+Pretraining:	Epoch: [11][10/40]	Loss 0.0104 (0.0107)	
+Pretraining:	Epoch: [11][20/40]	Loss 0.0107 (0.0106)	
+Pretraining:	Epoch: [11][30/40]	Loss 0.0104 (0.0106)	
+Pretraining:	Epoch: [11][40/40]	Loss 0.0102 (0.0106)	
+Pretraining:	 Loss: 0.0106
+
+Pretraining:	Epoch 12/300
+----------
+Pretraining:	Epoch: [12][10/40]	Loss 0.0103 (0.0105)	
+Pretraining:	Epoch: [12][20/40]	Loss 0.0106 (0.0105)	
+Pretraining:	Epoch: [12][30/40]	Loss 0.0103 (0.0105)	
+Pretraining:	Epoch: [12][40/40]	Loss 0.0101 (0.0105)	
+Pretraining:	 Loss: 0.0105
+
+Pretraining:	Epoch 13/300
+----------
+Pretraining:	Epoch: [13][10/40]	Loss 0.0102 (0.0104)	
+Pretraining:	Epoch: [13][20/40]	Loss 0.0105 (0.0104)	
+Pretraining:	Epoch: [13][30/40]	Loss 0.0103 (0.0104)	
+Pretraining:	Epoch: [13][40/40]	Loss 0.0099 (0.0104)	
+Pretraining:	 Loss: 0.0104
+
+Pretraining:	Epoch 14/300
+----------
+Pretraining:	Epoch: [14][10/40]	Loss 0.0102 (0.0104)	
+Pretraining:	Epoch: [14][20/40]	Loss 0.0104 (0.0104)	
+Pretraining:	Epoch: [14][30/40]	Loss 0.0102 (0.0104)	
+Pretraining:	Epoch: [14][40/40]	Loss 0.0098 (0.0103)	
+Pretraining:	 Loss: 0.0103
+
+Pretraining:	Epoch 15/300
+----------
+Pretraining:	Epoch: [15][10/40]	Loss 0.0101 (0.0103)	
+Pretraining:	Epoch: [15][20/40]	Loss 0.0104 (0.0103)	
+Pretraining:	Epoch: [15][30/40]	Loss 0.0102 (0.0103)	
+Pretraining:	Epoch: [15][40/40]	Loss 0.0099 (0.0103)	
+Pretraining:	 Loss: 0.0103
+
+Pretraining:	Epoch 16/300
+----------
+Pretraining:	Epoch: [16][10/40]	Loss 0.0102 (0.0103)	
+Pretraining:	Epoch: [16][20/40]	Loss 0.0104 (0.0103)	
+Pretraining:	Epoch: [16][30/40]	Loss 0.0102 (0.0103)	
+Pretraining:	Epoch: [16][40/40]	Loss 0.0098 (0.0103)	
+Pretraining:	 Loss: 0.0103
+
+Pretraining:	Epoch 17/300
+----------
+Pretraining:	Epoch: [17][10/40]	Loss 0.0100 (0.0102)	
+Pretraining:	Epoch: [17][20/40]	Loss 0.0103 (0.0102)	
+Pretraining:	Epoch: [17][30/40]	Loss 0.0101 (0.0102)	
+Pretraining:	Epoch: [17][40/40]	Loss 0.0098 (0.0102)	
+Pretraining:	 Loss: 0.0102
+
+Pretraining:	Epoch 18/300
+----------
+Pretraining:	Epoch: [18][10/40]	Loss 0.0100 (0.0102)	
+Pretraining:	Epoch: [18][20/40]	Loss 0.0103 (0.0102)	
+Pretraining:	Epoch: [18][30/40]	Loss 0.0101 (0.0102)	
+Pretraining:	Epoch: [18][40/40]	Loss 0.0097 (0.0102)	
+Pretraining:	 Loss: 0.0102
+
+Pretraining:	Epoch 19/300
+----------
+Pretraining:	Epoch: [19][10/40]	Loss 0.0100 (0.0102)	
+Pretraining:	Epoch: [19][20/40]	Loss 0.0103 (0.0102)	
+Pretraining:	Epoch: [19][30/40]	Loss 0.0101 (0.0102)	
+Pretraining:	Epoch: [19][40/40]	Loss 0.0097 (0.0102)	
+Pretraining:	 Loss: 0.0102
+
+Pretraining:	Epoch 20/300
+----------
+Pretraining:	Epoch: [20][10/40]	Loss 0.0100 (0.0102)	
+Pretraining:	Epoch: [20][20/40]	Loss 0.0103 (0.0102)	
+Pretraining:	Epoch: [20][30/40]	Loss 0.0101 (0.0102)	
+Pretraining:	Epoch: [20][40/40]	Loss 0.0097 (0.0102)	
+Pretraining:	 Loss: 0.0102
+
+Pretraining:	Epoch 21/300
+----------
+Pretraining:	Epoch: [21][10/40]	Loss 0.0100 (0.0101)	
+Pretraining:	Epoch: [21][20/40]	Loss 0.0103 (0.0101)	
+Pretraining:	Epoch: [21][30/40]	Loss 0.0101 (0.0101)	
+Pretraining:	Epoch: [21][40/40]	Loss 0.0097 (0.0101)	
+Pretraining:	 Loss: 0.0101
+
+Pretraining:	Epoch 22/300
+----------
+Pretraining:	Epoch: [22][10/40]	Loss 0.0100 (0.0101)	
+Pretraining:	Epoch: [22][20/40]	Loss 0.0104 (0.0101)	
+Pretraining:	Epoch: [22][30/40]	Loss 0.0101 (0.0101)	
+Pretraining:	Epoch: [22][40/40]	Loss 0.0097 (0.0101)	
+Pretraining:	 Loss: 0.0101
+
+Pretraining:	Epoch 23/300
+----------
+Pretraining:	Epoch: [23][10/40]	Loss 0.0099 (0.0101)	
+Pretraining:	Epoch: [23][20/40]	Loss 0.0102 (0.0101)	
+Pretraining:	Epoch: [23][30/40]	Loss 0.0100 (0.0101)	
+Pretraining:	Epoch: [23][40/40]	Loss 0.0096 (0.0101)	
+Pretraining:	 Loss: 0.0101
+
+Pretraining:	Epoch 24/300
+----------
+Pretraining:	Epoch: [24][10/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [24][20/40]	Loss 0.0102 (0.0100)	
+Pretraining:	Epoch: [24][30/40]	Loss 0.0100 (0.0100)	
+Pretraining:	Epoch: [24][40/40]	Loss 0.0096 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 25/300
+----------
+Pretraining:	Epoch: [25][10/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [25][20/40]	Loss 0.0102 (0.0101)	
+Pretraining:	Epoch: [25][30/40]	Loss 0.0100 (0.0101)	
+Pretraining:	Epoch: [25][40/40]	Loss 0.0096 (0.0101)	
+Pretraining:	 Loss: 0.0101
+
+Pretraining:	Epoch 26/300
+----------
+Pretraining:	Epoch: [26][10/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [26][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [26][30/40]	Loss 0.0100 (0.0100)	
+Pretraining:	Epoch: [26][40/40]	Loss 0.0096 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 27/300
+----------
+Pretraining:	Epoch: [27][10/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [27][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [27][30/40]	Loss 0.0100 (0.0100)	
+Pretraining:	Epoch: [27][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 28/300
+----------
+Pretraining:	Epoch: [28][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [28][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [28][30/40]	Loss 0.0100 (0.0100)	
+Pretraining:	Epoch: [28][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 29/300
+----------
+Pretraining:	Epoch: [29][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [29][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [29][30/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [29][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 30/300
+----------
+Pretraining:	Epoch: [30][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [30][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [30][30/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [30][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 31/300
+----------
+Pretraining:	Epoch: [31][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [31][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [31][30/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [31][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 32/300
+----------
+Pretraining:	Epoch: [32][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [32][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [32][30/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [32][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 33/300
+----------
+Pretraining:	Epoch: [33][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [33][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [33][30/40]	Loss 0.0099 (0.0100)	
+Pretraining:	Epoch: [33][40/40]	Loss 0.0095 (0.0100)	
+Pretraining:	 Loss: 0.0100
+
+Pretraining:	Epoch 34/300
+----------
+Pretraining:	Epoch: [34][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [34][20/40]	Loss 0.0101 (0.0100)	
+Pretraining:	Epoch: [34][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [34][40/40]	Loss 0.0095 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 35/300
+----------
+Pretraining:	Epoch: [35][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [35][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [35][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [35][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 36/300
+----------
+Pretraining:	Epoch: [36][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [36][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [36][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [36][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 37/300
+----------
+Pretraining:	Epoch: [37][10/40]	Loss 0.0098 (0.0100)	
+Pretraining:	Epoch: [37][20/40]	Loss 0.0100 (0.0100)	
+Pretraining:	Epoch: [37][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [37][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 38/300
+----------
+Pretraining:	Epoch: [38][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [38][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [38][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [38][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 39/300
+----------
+Pretraining:	Epoch: [39][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [39][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [39][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [39][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 40/300
+----------
+Pretraining:	Epoch: [40][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [40][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [40][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [40][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 41/300
+----------
+Pretraining:	Epoch: [41][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [41][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [41][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [41][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 42/300
+----------
+Pretraining:	Epoch: [42][10/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [42][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [42][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [42][40/40]	Loss 0.0094 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 43/300
+----------
+Pretraining:	Epoch: [43][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [43][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [43][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [43][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 44/300
+----------
+Pretraining:	Epoch: [44][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [44][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [44][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [44][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 45/300
+----------
+Pretraining:	Epoch: [45][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [45][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [45][30/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [45][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 46/300
+----------
+Pretraining:	Epoch: [46][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [46][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [46][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [46][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 47/300
+----------
+Pretraining:	Epoch: [47][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [47][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [47][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [47][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 48/300
+----------
+Pretraining:	Epoch: [48][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [48][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [48][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [48][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 49/300
+----------
+Pretraining:	Epoch: [49][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [49][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [49][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [49][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 50/300
+----------
+Pretraining:	Epoch: [50][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [50][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [50][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [50][40/40]	Loss 0.0093 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 51/300
+----------
+Pretraining:	Epoch: [51][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [51][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [51][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [51][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 52/300
+----------
+Pretraining:	Epoch: [52][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [52][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [52][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [52][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 53/300
+----------
+Pretraining:	Epoch: [53][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [53][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [53][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [53][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 54/300
+----------
+Pretraining:	Epoch: [54][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [54][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [54][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [54][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 55/300
+----------
+Pretraining:	Epoch: [55][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [55][20/40]	Loss 0.0100 (0.0099)	
+Pretraining:	Epoch: [55][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [55][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 56/300
+----------
+Pretraining:	Epoch: [56][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [56][20/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [56][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [56][40/40]	Loss 0.0092 (0.0099)	
+Pretraining:	 Loss: 0.0099
+
+Pretraining:	Epoch 57/300
+----------
+Pretraining:	Epoch: [57][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [57][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [57][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [57][40/40]	Loss 0.0091 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 58/300
+----------
+Pretraining:	Epoch: [58][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [58][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [58][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [58][40/40]	Loss 0.0091 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 59/300
+----------
+Pretraining:	Epoch: [59][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [59][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [59][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [59][40/40]	Loss 0.0091 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 60/300
+----------
+Pretraining:	Epoch: [60][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [60][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [60][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [60][40/40]	Loss 0.0091 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 61/300
+----------
+Pretraining:	Epoch: [61][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [61][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [61][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [61][40/40]	Loss 0.0091 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 62/300
+----------
+Pretraining:	Epoch: [62][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [62][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [62][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [62][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 63/300
+----------
+Pretraining:	Epoch: [63][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [63][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [63][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [63][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 64/300
+----------
+Pretraining:	Epoch: [64][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [64][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [64][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [64][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 65/300
+----------
+Pretraining:	Epoch: [65][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [65][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [65][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [65][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 66/300
+----------
+Pretraining:	Epoch: [66][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [66][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [66][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [66][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 67/300
+----------
+Pretraining:	Epoch: [67][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [67][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [67][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [67][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 68/300
+----------
+Pretraining:	Epoch: [68][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [68][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [68][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [68][40/40]	Loss 0.0090 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 69/300
+----------
+Pretraining:	Epoch: [69][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [69][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [69][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [69][40/40]	Loss 0.0089 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 70/300
+----------
+Pretraining:	Epoch: [70][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [70][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [70][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [70][40/40]	Loss 0.0089 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 71/300
+----------
+Pretraining:	Epoch: [71][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [71][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [71][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [71][40/40]	Loss 0.0089 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 72/300
+----------
+Pretraining:	Epoch: [72][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [72][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [72][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [72][40/40]	Loss 0.0089 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 73/300
+----------
+Pretraining:	Epoch: [73][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [73][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [73][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [73][40/40]	Loss 0.0088 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 74/300
+----------
+Pretraining:	Epoch: [74][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [74][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [74][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [74][40/40]	Loss 0.0088 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 75/300
+----------
+Pretraining:	Epoch: [75][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [75][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [75][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [75][40/40]	Loss 0.0088 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 76/300
+----------
+Pretraining:	Epoch: [76][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [76][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [76][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [76][40/40]	Loss 0.0088 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 77/300
+----------
+Pretraining:	Epoch: [77][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [77][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [77][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [77][40/40]	Loss 0.0088 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 78/300
+----------
+Pretraining:	Epoch: [78][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [78][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [78][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [78][40/40]	Loss 0.0087 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 79/300
+----------
+Pretraining:	Epoch: [79][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [79][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [79][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [79][40/40]	Loss 0.0087 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 80/300
+----------
+Pretraining:	Epoch: [80][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [80][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [80][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [80][40/40]	Loss 0.0087 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 81/300
+----------
+Pretraining:	Epoch: [81][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [81][20/40]	Loss 0.0099 (0.0099)	
+Pretraining:	Epoch: [81][30/40]	Loss 0.0098 (0.0099)	
+Pretraining:	Epoch: [81][40/40]	Loss 0.0087 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 82/300
+----------
+Pretraining:	Epoch: [82][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [82][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [82][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [82][40/40]	Loss 0.0086 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 83/300
+----------
+Pretraining:	Epoch: [83][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [83][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [83][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [83][40/40]	Loss 0.0086 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 84/300
+----------
+Pretraining:	Epoch: [84][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [84][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [84][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [84][40/40]	Loss 0.0086 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 85/300
+----------
+Pretraining:	Epoch: [85][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [85][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [85][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [85][40/40]	Loss 0.0085 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 86/300
+----------
+Pretraining:	Epoch: [86][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [86][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [86][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [86][40/40]	Loss 0.0085 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 87/300
+----------
+Pretraining:	Epoch: [87][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [87][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [87][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [87][40/40]	Loss 0.0085 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 88/300
+----------
+Pretraining:	Epoch: [88][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [88][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [88][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [88][40/40]	Loss 0.0085 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 89/300
+----------
+Pretraining:	Epoch: [89][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [89][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [89][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [89][40/40]	Loss 0.0084 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 90/300
+----------
+Pretraining:	Epoch: [90][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [90][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [90][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [90][40/40]	Loss 0.0084 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 91/300
+----------
+Pretraining:	Epoch: [91][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [91][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [91][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [91][40/40]	Loss 0.0084 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 92/300
+----------
+Pretraining:	Epoch: [92][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [92][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [92][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [92][40/40]	Loss 0.0083 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 93/300
+----------
+Pretraining:	Epoch: [93][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [93][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [93][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [93][40/40]	Loss 0.0083 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 94/300
+----------
+Pretraining:	Epoch: [94][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [94][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [94][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [94][40/40]	Loss 0.0083 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 95/300
+----------
+Pretraining:	Epoch: [95][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [95][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [95][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [95][40/40]	Loss 0.0083 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 96/300
+----------
+Pretraining:	Epoch: [96][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [96][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [96][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [96][40/40]	Loss 0.0082 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 97/300
+----------
+Pretraining:	Epoch: [97][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [97][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [97][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [97][40/40]	Loss 0.0082 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 98/300
+----------
+Pretraining:	Epoch: [98][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [98][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [98][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [98][40/40]	Loss 0.0081 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 99/300
+----------
+Pretraining:	Epoch: [99][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [99][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [99][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [99][40/40]	Loss 0.0081 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 100/300
+----------
+Pretraining:	Epoch: [100][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [100][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [100][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [100][40/40]	Loss 0.0081 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 101/300
+----------
+Pretraining:	Epoch: [101][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [101][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [101][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [101][40/40]	Loss 0.0080 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 102/300
+----------
+Pretraining:	Epoch: [102][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [102][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [102][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [102][40/40]	Loss 0.0080 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 103/300
+----------
+Pretraining:	Epoch: [103][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [103][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [103][30/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [103][40/40]	Loss 0.0080 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 104/300
+----------
+Pretraining:	Epoch: [104][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [104][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [104][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [104][40/40]	Loss 0.0079 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 105/300
+----------
+Pretraining:	Epoch: [105][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [105][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [105][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [105][40/40]	Loss 0.0079 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 106/300
+----------
+Pretraining:	Epoch: [106][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [106][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [106][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [106][40/40]	Loss 0.0079 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 107/300
+----------
+Pretraining:	Epoch: [107][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [107][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [107][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [107][40/40]	Loss 0.0078 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 108/300
+----------
+Pretraining:	Epoch: [108][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [108][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [108][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [108][40/40]	Loss 0.0078 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 109/300
+----------
+Pretraining:	Epoch: [109][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [109][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [109][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [109][40/40]	Loss 0.0077 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 110/300
+----------
+Pretraining:	Epoch: [110][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [110][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [110][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [110][40/40]	Loss 0.0077 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 111/300
+----------
+Pretraining:	Epoch: [111][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [111][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [111][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [111][40/40]	Loss 0.0077 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 112/300
+----------
+Pretraining:	Epoch: [112][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [112][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [112][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [112][40/40]	Loss 0.0077 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 113/300
+----------
+Pretraining:	Epoch: [113][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [113][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [113][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [113][40/40]	Loss 0.0076 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 114/300
+----------
+Pretraining:	Epoch: [114][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [114][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [114][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [114][40/40]	Loss 0.0076 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 115/300
+----------
+Pretraining:	Epoch: [115][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [115][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [115][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [115][40/40]	Loss 0.0075 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 116/300
+----------
+Pretraining:	Epoch: [116][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [116][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [116][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [116][40/40]	Loss 0.0075 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 117/300
+----------
+Pretraining:	Epoch: [117][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [117][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [117][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [117][40/40]	Loss 0.0074 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 118/300
+----------
+Pretraining:	Epoch: [118][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [118][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [118][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [118][40/40]	Loss 0.0074 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 119/300
+----------
+Pretraining:	Epoch: [119][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [119][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [119][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [119][40/40]	Loss 0.0074 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 120/300
+----------
+Pretraining:	Epoch: [120][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [120][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [120][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [120][40/40]	Loss 0.0073 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 121/300
+----------
+Pretraining:	Epoch: [121][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [121][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [121][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [121][40/40]	Loss 0.0073 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 122/300
+----------
+Pretraining:	Epoch: [122][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [122][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [122][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [122][40/40]	Loss 0.0072 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 123/300
+----------
+Pretraining:	Epoch: [123][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [123][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [123][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [123][40/40]	Loss 0.0072 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 124/300
+----------
+Pretraining:	Epoch: [124][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [124][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [124][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [124][40/40]	Loss 0.0072 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 125/300
+----------
+Pretraining:	Epoch: [125][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [125][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [125][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [125][40/40]	Loss 0.0072 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 126/300
+----------
+Pretraining:	Epoch: [126][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [126][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [126][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [126][40/40]	Loss 0.0072 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 127/300
+----------
+Pretraining:	Epoch: [127][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [127][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [127][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [127][40/40]	Loss 0.0071 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 128/300
+----------
+Pretraining:	Epoch: [128][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [128][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [128][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [128][40/40]	Loss 0.0070 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 129/300
+----------
+Pretraining:	Epoch: [129][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [129][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [129][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [129][40/40]	Loss 0.0070 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 130/300
+----------
+Pretraining:	Epoch: [130][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [130][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [130][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [130][40/40]	Loss 0.0070 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 131/300
+----------
+Pretraining:	Epoch: [131][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [131][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [131][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [131][40/40]	Loss 0.0069 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 132/300
+----------
+Pretraining:	Epoch: [132][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [132][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [132][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [132][40/40]	Loss 0.0069 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 133/300
+----------
+Pretraining:	Epoch: [133][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [133][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [133][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [133][40/40]	Loss 0.0069 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 134/300
+----------
+Pretraining:	Epoch: [134][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [134][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [134][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [134][40/40]	Loss 0.0068 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 135/300
+----------
+Pretraining:	Epoch: [135][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [135][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [135][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [135][40/40]	Loss 0.0068 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 136/300
+----------
+Pretraining:	Epoch: [136][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [136][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [136][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [136][40/40]	Loss 0.0068 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 137/300
+----------
+Pretraining:	Epoch: [137][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [137][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [137][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [137][40/40]	Loss 0.0068 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 138/300
+----------
+Pretraining:	Epoch: [138][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [138][20/40]	Loss 0.0099 (0.0098)	
+Pretraining:	Epoch: [138][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [138][40/40]	Loss 0.0068 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 139/300
+----------
+Pretraining:	Epoch: [139][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [139][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [139][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [139][40/40]	Loss 0.0066 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 140/300
+----------
+Pretraining:	Epoch: [140][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [140][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [140][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [140][40/40]	Loss 0.0066 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 141/300
+----------
+Pretraining:	Epoch: [141][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [141][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [141][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [141][40/40]	Loss 0.0065 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 142/300
+----------
+Pretraining:	Epoch: [142][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [142][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [142][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [142][40/40]	Loss 0.0065 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 143/300
+----------
+Pretraining:	Epoch: [143][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [143][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [143][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [143][40/40]	Loss 0.0065 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 144/300
+----------
+Pretraining:	Epoch: [144][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [144][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [144][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [144][40/40]	Loss 0.0064 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 145/300
+----------
+Pretraining:	Epoch: [145][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [145][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [145][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [145][40/40]	Loss 0.0064 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 146/300
+----------
+Pretraining:	Epoch: [146][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [146][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [146][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [146][40/40]	Loss 0.0064 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 147/300
+----------
+Pretraining:	Epoch: [147][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [147][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [147][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [147][40/40]	Loss 0.0064 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 148/300
+----------
+Pretraining:	Epoch: [148][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [148][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [148][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [148][40/40]	Loss 0.0063 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 149/300
+----------
+Pretraining:	Epoch: [149][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [149][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [149][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [149][40/40]	Loss 0.0064 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 150/300
+----------
+Pretraining:	Epoch: [150][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [150][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [150][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [150][40/40]	Loss 0.0063 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 151/300
+----------
+Pretraining:	Epoch: [151][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [151][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [151][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [151][40/40]	Loss 0.0062 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 152/300
+----------
+Pretraining:	Epoch: [152][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [152][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [152][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [152][40/40]	Loss 0.0061 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 153/300
+----------
+Pretraining:	Epoch: [153][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [153][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [153][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [153][40/40]	Loss 0.0061 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 154/300
+----------
+Pretraining:	Epoch: [154][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [154][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [154][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [154][40/40]	Loss 0.0060 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 155/300
+----------
+Pretraining:	Epoch: [155][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [155][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [155][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [155][40/40]	Loss 0.0060 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 156/300
+----------
+Pretraining:	Epoch: [156][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [156][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [156][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [156][40/40]	Loss 0.0060 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 157/300
+----------
+Pretraining:	Epoch: [157][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [157][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [157][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [157][40/40]	Loss 0.0060 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 158/300
+----------
+Pretraining:	Epoch: [158][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [158][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [158][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [158][40/40]	Loss 0.0059 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 159/300
+----------
+Pretraining:	Epoch: [159][10/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [159][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [159][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [159][40/40]	Loss 0.0059 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 160/300
+----------
+Pretraining:	Epoch: [160][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [160][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [160][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [160][40/40]	Loss 0.0059 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 161/300
+----------
+Pretraining:	Epoch: [161][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [161][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [161][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [161][40/40]	Loss 0.0058 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 162/300
+----------
+Pretraining:	Epoch: [162][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [162][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [162][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [162][40/40]	Loss 0.0058 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 163/300
+----------
+Pretraining:	Epoch: [163][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [163][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [163][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [163][40/40]	Loss 0.0058 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 164/300
+----------
+Pretraining:	Epoch: [164][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [164][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [164][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [164][40/40]	Loss 0.0057 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 165/300
+----------
+Pretraining:	Epoch: [165][10/40]	Loss 0.0096 (0.0099)	
+Pretraining:	Epoch: [165][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [165][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [165][40/40]	Loss 0.0057 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 166/300
+----------
+Pretraining:	Epoch: [166][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [166][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [166][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [166][40/40]	Loss 0.0056 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 167/300
+----------
+Pretraining:	Epoch: [167][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [167][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [167][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [167][40/40]	Loss 0.0056 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 168/300
+----------
+Pretraining:	Epoch: [168][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [168][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [168][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [168][40/40]	Loss 0.0055 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 169/300
+----------
+Pretraining:	Epoch: [169][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [169][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [169][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [169][40/40]	Loss 0.0055 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 170/300
+----------
+Pretraining:	Epoch: [170][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [170][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [170][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [170][40/40]	Loss 0.0054 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 171/300
+----------
+Pretraining:	Epoch: [171][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [171][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [171][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [171][40/40]	Loss 0.0054 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 172/300
+----------
+Pretraining:	Epoch: [172][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [172][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [172][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [172][40/40]	Loss 0.0053 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 173/300
+----------
+Pretraining:	Epoch: [173][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [173][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [173][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [173][40/40]	Loss 0.0053 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 174/300
+----------
+Pretraining:	Epoch: [174][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [174][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [174][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [174][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 175/300
+----------
+Pretraining:	Epoch: [175][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [175][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [175][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [175][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 176/300
+----------
+Pretraining:	Epoch: [176][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [176][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [176][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [176][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 177/300
+----------
+Pretraining:	Epoch: [177][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [177][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [177][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [177][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 178/300
+----------
+Pretraining:	Epoch: [178][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [178][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [178][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [178][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 179/300
+----------
+Pretraining:	Epoch: [179][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [179][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [179][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [179][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 180/300
+----------
+Pretraining:	Epoch: [180][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [180][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [180][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [180][40/40]	Loss 0.0052 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 181/300
+----------
+Pretraining:	Epoch: [181][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [181][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [181][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [181][40/40]	Loss 0.0051 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 182/300
+----------
+Pretraining:	Epoch: [182][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [182][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [182][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [182][40/40]	Loss 0.0051 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 183/300
+----------
+Pretraining:	Epoch: [183][10/40]	Loss 0.0097 (0.0099)	
+Pretraining:	Epoch: [183][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [183][30/40]	Loss 0.0097 (0.0098)	
+Pretraining:	Epoch: [183][40/40]	Loss 0.0050 (0.0098)	
+Pretraining:	 Loss: 0.0098
+
+Pretraining:	Epoch 184/300
+----------
+Pretraining:	Epoch: [184][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [184][20/40]	Loss 0.0098 (0.0098)	
+Pretraining:	Epoch: [184][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [184][40/40]	Loss 0.0050 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 185/300
+----------
+Pretraining:	Epoch: [185][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [185][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [185][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [185][40/40]	Loss 0.0049 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 186/300
+----------
+Pretraining:	Epoch: [186][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [186][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [186][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [186][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 187/300
+----------
+Pretraining:	Epoch: [187][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [187][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [187][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [187][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 188/300
+----------
+Pretraining:	Epoch: [188][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [188][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [188][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [188][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 189/300
+----------
+Pretraining:	Epoch: [189][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [189][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [189][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [189][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 190/300
+----------
+Pretraining:	Epoch: [190][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [190][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [190][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [190][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 191/300
+----------
+Pretraining:	Epoch: [191][10/40]	Loss 0.0096 (0.0098)	
+Pretraining:	Epoch: [191][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [191][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [191][40/40]	Loss 0.0047 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 192/300
+----------
+Pretraining:	Epoch: [192][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [192][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [192][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [192][40/40]	Loss 0.0048 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 193/300
+----------
+Pretraining:	Epoch: [193][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [193][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [193][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [193][40/40]	Loss 0.0046 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 194/300
+----------
+Pretraining:	Epoch: [194][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [194][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [194][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [194][40/40]	Loss 0.0047 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 195/300
+----------
+Pretraining:	Epoch: [195][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [195][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [195][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [195][40/40]	Loss 0.0046 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 196/300
+----------
+Pretraining:	Epoch: [196][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [196][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [196][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [196][40/40]	Loss 0.0046 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 197/300
+----------
+Pretraining:	Epoch: [197][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [197][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [197][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [197][40/40]	Loss 0.0045 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 198/300
+----------
+Pretraining:	Epoch: [198][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [198][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [198][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [198][40/40]	Loss 0.0045 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 199/300
+----------
+Pretraining:	Epoch: [199][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [199][20/40]	Loss 0.0098 (0.0097)	
+Pretraining:	Epoch: [199][30/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [199][40/40]	Loss 0.0044 (0.0097)	
+Pretraining:	 Loss: 0.0097
+
+Pretraining:	Epoch 200/300
+----------
+Pretraining:	Epoch: [200][10/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [200][20/40]	Loss 0.0097 (0.0097)	
+Pretraining:	Epoch: [200][30/40]	Loss 0.0096 (0.0097)	
+Pretraining:	Epoch: [200][40/40]	Loss 0.0043 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 201/300
+----------
+Pretraining:	Epoch: [201][10/40]	Loss 0.0095 (0.0097)	
+Pretraining:	Epoch: [201][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [201][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [201][40/40]	Loss 0.0043 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 202/300
+----------
+Pretraining:	Epoch: [202][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [202][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [202][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [202][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 203/300
+----------
+Pretraining:	Epoch: [203][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [203][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [203][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [203][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 204/300
+----------
+Pretraining:	Epoch: [204][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [204][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [204][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [204][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 205/300
+----------
+Pretraining:	Epoch: [205][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [205][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [205][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [205][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 206/300
+----------
+Pretraining:	Epoch: [206][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [206][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [206][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [206][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 207/300
+----------
+Pretraining:	Epoch: [207][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [207][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [207][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [207][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 208/300
+----------
+Pretraining:	Epoch: [208][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [208][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [208][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [208][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 209/300
+----------
+Pretraining:	Epoch: [209][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [209][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [209][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [209][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 210/300
+----------
+Pretraining:	Epoch: [210][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [210][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [210][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [210][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 211/300
+----------
+Pretraining:	Epoch: [211][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [211][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [211][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [211][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 212/300
+----------
+Pretraining:	Epoch: [212][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [212][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [212][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [212][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 213/300
+----------
+Pretraining:	Epoch: [213][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [213][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [213][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [213][40/40]	Loss 0.0042 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 214/300
+----------
+Pretraining:	Epoch: [214][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [214][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [214][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [214][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 215/300
+----------
+Pretraining:	Epoch: [215][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [215][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [215][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [215][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 216/300
+----------
+Pretraining:	Epoch: [216][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [216][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [216][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [216][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 217/300
+----------
+Pretraining:	Epoch: [217][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [217][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [217][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [217][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 218/300
+----------
+Pretraining:	Epoch: [218][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [218][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [218][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [218][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 219/300
+----------
+Pretraining:	Epoch: [219][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [219][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [219][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [219][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 220/300
+----------
+Pretraining:	Epoch: [220][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [220][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [220][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [220][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 221/300
+----------
+Pretraining:	Epoch: [221][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [221][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [221][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [221][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 222/300
+----------
+Pretraining:	Epoch: [222][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [222][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [222][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [222][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 223/300
+----------
+Pretraining:	Epoch: [223][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [223][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [223][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [223][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 224/300
+----------
+Pretraining:	Epoch: [224][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [224][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [224][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [224][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 225/300
+----------
+Pretraining:	Epoch: [225][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [225][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [225][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [225][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 226/300
+----------
+Pretraining:	Epoch: [226][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [226][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [226][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [226][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 227/300
+----------
+Pretraining:	Epoch: [227][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [227][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [227][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [227][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 228/300
+----------
+Pretraining:	Epoch: [228][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [228][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [228][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [228][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 229/300
+----------
+Pretraining:	Epoch: [229][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [229][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [229][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [229][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 230/300
+----------
+Pretraining:	Epoch: [230][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [230][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [230][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [230][40/40]	Loss 0.0041 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 231/300
+----------
+Pretraining:	Epoch: [231][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [231][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [231][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [231][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 232/300
+----------
+Pretraining:	Epoch: [232][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [232][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [232][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [232][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 233/300
+----------
+Pretraining:	Epoch: [233][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [233][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [233][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [233][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 234/300
+----------
+Pretraining:	Epoch: [234][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [234][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [234][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [234][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 235/300
+----------
+Pretraining:	Epoch: [235][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [235][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [235][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [235][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 236/300
+----------
+Pretraining:	Epoch: [236][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [236][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [236][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [236][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 237/300
+----------
+Pretraining:	Epoch: [237][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [237][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [237][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [237][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 238/300
+----------
+Pretraining:	Epoch: [238][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [238][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [238][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [238][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 239/300
+----------
+Pretraining:	Epoch: [239][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [239][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [239][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [239][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 240/300
+----------
+Pretraining:	Epoch: [240][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [240][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [240][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [240][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 241/300
+----------
+Pretraining:	Epoch: [241][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [241][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [241][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [241][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 242/300
+----------
+Pretraining:	Epoch: [242][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [242][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [242][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [242][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 243/300
+----------
+Pretraining:	Epoch: [243][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [243][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [243][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [243][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 244/300
+----------
+Pretraining:	Epoch: [244][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [244][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [244][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [244][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 245/300
+----------
+Pretraining:	Epoch: [245][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [245][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [245][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [245][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 246/300
+----------
+Pretraining:	Epoch: [246][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [246][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [246][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [246][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 247/300
+----------
+Pretraining:	Epoch: [247][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [247][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [247][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [247][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 248/300
+----------
+Pretraining:	Epoch: [248][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [248][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [248][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [248][40/40]	Loss 0.0040 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 249/300
+----------
+Pretraining:	Epoch: [249][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [249][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [249][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [249][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 250/300
+----------
+Pretraining:	Epoch: [250][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [250][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [250][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [250][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 251/300
+----------
+Pretraining:	Epoch: [251][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [251][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [251][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [251][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 252/300
+----------
+Pretraining:	Epoch: [252][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [252][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [252][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [252][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 253/300
+----------
+Pretraining:	Epoch: [253][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [253][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [253][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [253][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 254/300
+----------
+Pretraining:	Epoch: [254][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [254][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [254][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [254][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 255/300
+----------
+Pretraining:	Epoch: [255][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [255][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [255][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [255][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 256/300
+----------
+Pretraining:	Epoch: [256][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [256][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [256][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [256][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 257/300
+----------
+Pretraining:	Epoch: [257][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [257][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [257][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [257][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 258/300
+----------
+Pretraining:	Epoch: [258][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [258][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [258][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [258][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 259/300
+----------
+Pretraining:	Epoch: [259][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [259][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [259][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [259][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 260/300
+----------
+Pretraining:	Epoch: [260][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [260][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [260][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [260][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 261/300
+----------
+Pretraining:	Epoch: [261][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [261][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [261][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [261][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 262/300
+----------
+Pretraining:	Epoch: [262][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [262][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [262][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [262][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 263/300
+----------
+Pretraining:	Epoch: [263][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [263][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [263][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [263][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 264/300
+----------
+Pretraining:	Epoch: [264][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [264][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [264][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [264][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 265/300
+----------
+Pretraining:	Epoch: [265][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [265][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [265][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [265][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 266/300
+----------
+Pretraining:	Epoch: [266][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [266][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [266][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [266][40/40]	Loss 0.0039 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 267/300
+----------
+Pretraining:	Epoch: [267][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [267][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [267][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [267][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 268/300
+----------
+Pretraining:	Epoch: [268][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [268][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [268][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [268][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 269/300
+----------
+Pretraining:	Epoch: [269][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [269][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [269][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [269][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 270/300
+----------
+Pretraining:	Epoch: [270][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [270][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [270][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [270][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 271/300
+----------
+Pretraining:	Epoch: [271][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [271][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [271][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [271][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 272/300
+----------
+Pretraining:	Epoch: [272][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [272][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [272][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [272][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 273/300
+----------
+Pretraining:	Epoch: [273][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [273][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [273][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [273][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 274/300
+----------
+Pretraining:	Epoch: [274][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [274][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [274][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [274][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 275/300
+----------
+Pretraining:	Epoch: [275][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [275][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [275][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [275][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 276/300
+----------
+Pretraining:	Epoch: [276][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [276][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [276][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [276][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 277/300
+----------
+Pretraining:	Epoch: [277][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [277][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [277][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [277][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 278/300
+----------
+Pretraining:	Epoch: [278][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [278][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [278][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [278][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 279/300
+----------
+Pretraining:	Epoch: [279][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [279][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [279][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [279][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 280/300
+----------
+Pretraining:	Epoch: [280][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [280][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [280][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [280][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 281/300
+----------
+Pretraining:	Epoch: [281][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [281][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [281][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [281][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 282/300
+----------
+Pretraining:	Epoch: [282][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [282][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [282][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [282][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 283/300
+----------
+Pretraining:	Epoch: [283][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [283][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [283][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [283][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 284/300
+----------
+Pretraining:	Epoch: [284][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [284][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [284][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [284][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 285/300
+----------
+Pretraining:	Epoch: [285][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [285][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [285][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [285][40/40]	Loss 0.0038 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 286/300
+----------
+Pretraining:	Epoch: [286][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [286][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [286][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [286][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 287/300
+----------
+Pretraining:	Epoch: [287][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [287][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [287][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [287][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 288/300
+----------
+Pretraining:	Epoch: [288][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [288][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [288][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [288][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 289/300
+----------
+Pretraining:	Epoch: [289][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [289][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [289][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [289][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 290/300
+----------
+Pretraining:	Epoch: [290][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [290][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [290][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [290][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 291/300
+----------
+Pretraining:	Epoch: [291][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [291][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [291][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [291][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 292/300
+----------
+Pretraining:	Epoch: [292][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [292][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [292][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [292][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 293/300
+----------
+Pretraining:	Epoch: [293][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [293][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [293][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [293][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 294/300
+----------
+Pretraining:	Epoch: [294][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [294][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [294][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [294][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 295/300
+----------
+Pretraining:	Epoch: [295][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [295][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [295][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [295][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 296/300
+----------
+Pretraining:	Epoch: [296][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [296][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [296][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [296][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 297/300
+----------
+Pretraining:	Epoch: [297][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [297][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [297][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [297][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 298/300
+----------
+Pretraining:	Epoch: [298][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [298][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [298][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [298][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 299/300
+----------
+Pretraining:	Epoch: [299][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [299][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [299][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [299][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining:	Epoch 300/300
+----------
+Pretraining:	Epoch: [300][10/40]	Loss 0.0095 (0.0096)	
+Pretraining:	Epoch: [300][20/40]	Loss 0.0097 (0.0096)	
+Pretraining:	Epoch: [300][30/40]	Loss 0.0096 (0.0096)	
+Pretraining:	Epoch: [300][40/40]	Loss 0.0037 (0.0096)	
+Pretraining:	 Loss: 0.0096
+
+Pretraining complete in 54m 8s
+
+Initializing cluster centers based on K-means
+
+Begin clusters training
+
+Updating target distribution
+NMI: 0.06085	ARI: 0.02994	Acc 0.18190
+
+Epoch 1/1000
+----------
+Epoch: [1][10/40]	Loss 0.0223 (0.0237)	Loss_recovery 0.0105 (0.0107)	Loss clustering 0.0118 (0.0129)	
+Epoch: [1][20/40]	Loss 0.0220 (0.0229)	Loss_recovery 0.0105 (0.0106)	Loss clustering 0.0115 (0.0123)	
+Epoch: [1][30/40]	Loss 0.0215 (0.0225)	Loss_recovery 0.0101 (0.0105)	Loss clustering 0.0114 (0.0120)	
+Epoch: [1][40/40]	Loss 0.0204 (0.0223)	Loss_recovery 0.0090 (0.0104)	Loss clustering 0.0114 (0.0118)	
+Loss: 0.0223	Loss_recovery: 0.0104	Loss_clustering: 0.0118
+
+Epoch 2/1000
+----------
+
+Updating target distribution:
+NMI: 0.03807	ARI: 0.01029	Acc 0.14580	
+Epoch: [2][10/40]	Loss 0.0213 (0.0214)	Loss_recovery 0.0099 (0.0101)	Loss clustering 0.0114 (0.0114)	
+Epoch: [2][20/40]	Loss 0.0214 (0.0214)	Loss_recovery 0.0101 (0.0100)	Loss clustering 0.0113 (0.0114)	
+Epoch: [2][30/40]	Loss 0.0212 (0.0214)	Loss_recovery 0.0099 (0.0100)	Loss clustering 0.0113 (0.0114)	
+Epoch: [2][40/40]	Loss 0.0197 (0.0213)	Loss_recovery 0.0083 (0.0100)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0213	Loss_recovery: 0.0100	Loss_clustering: 0.0113
+
+Epoch 3/1000
+----------
+
+Updating target distribution:
+NMI: 0.03383	ARI: 0.00746	Acc 0.14120	
+Epoch: [3][10/40]	Loss 0.0211 (0.0213)	Loss_recovery 0.0098 (0.0100)	Loss clustering 0.0113 (0.0113)	
+Epoch: [3][20/40]	Loss 0.0213 (0.0213)	Loss_recovery 0.0100 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [3][30/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [3][40/40]	Loss 0.0192 (0.0212)	Loss_recovery 0.0079 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0099	Loss_clustering: 0.0113
+
+Epoch 4/1000
+----------
+
+Updating target distribution:
+NMI: 0.03487	ARI: 0.00959	Acc 0.14330	
+Epoch: [4][10/40]	Loss 0.0211 (0.0213)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [4][20/40]	Loss 0.0213 (0.0212)	Loss_recovery 0.0100 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [4][30/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [4][40/40]	Loss 0.0189 (0.0212)	Loss_recovery 0.0076 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0099	Loss_clustering: 0.0113
+
+Epoch 5/1000
+----------
+
+Updating target distribution:
+NMI: 0.03559	ARI: 0.01198	Acc 0.14370	
+Epoch: [5][10/40]	Loss 0.0211 (0.0213)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [5][20/40]	Loss 0.0213 (0.0212)	Loss_recovery 0.0100 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [5][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [5][40/40]	Loss 0.0186 (0.0212)	Loss_recovery 0.0073 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0099	Loss_clustering: 0.0113
+
+Epoch 6/1000
+----------
+
+Updating target distribution:
+NMI: 0.03436	ARI: 0.01180	Acc 0.14370	
+Epoch: [6][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [6][20/40]	Loss 0.0213 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [6][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [6][40/40]	Loss 0.0184 (0.0211)	Loss_recovery 0.0071 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 7/1000
+----------
+
+Updating target distribution:
+NMI: 0.03654	ARI: 0.01494	Acc 0.14600	
+Epoch: [7][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [7][20/40]	Loss 0.0213 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [7][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [7][40/40]	Loss 0.0183 (0.0211)	Loss_recovery 0.0070 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 8/1000
+----------
+
+Updating target distribution:
+NMI: 0.03319	ARI: 0.01185	Acc 0.14330	
+Epoch: [8][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [8][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [8][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [8][40/40]	Loss 0.0181 (0.0211)	Loss_recovery 0.0068 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 9/1000
+----------
+
+Updating target distribution:
+NMI: 0.03836	ARI: 0.01939	Acc 0.14860	
+Epoch: [9][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [9][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [9][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [9][40/40]	Loss 0.0181 (0.0212)	Loss_recovery 0.0068 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 10/1000
+----------
+
+Updating target distribution:
+NMI: 0.02738	ARI: 0.00598	Acc 0.13430	
+Epoch: [10][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [10][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [10][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [10][40/40]	Loss 0.0179 (0.0211)	Loss_recovery 0.0066 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 11/1000
+----------
+
+Updating target distribution:
+NMI: 0.03531	ARI: 0.01661	Acc 0.14490	
+Epoch: [11][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [11][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [11][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [11][40/40]	Loss 0.0179 (0.0211)	Loss_recovery 0.0066 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 12/1000
+----------
+
+Updating target distribution:
+NMI: 0.02796	ARI: 0.00728	Acc 0.13590	
+Epoch: [12][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [12][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [12][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [12][40/40]	Loss 0.0176 (0.0211)	Loss_recovery 0.0063 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 13/1000
+----------
+
+Updating target distribution:
+NMI: 0.02922	ARI: 0.01142	Acc 0.13820	
+Epoch: [13][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [13][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [13][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [13][40/40]	Loss 0.0177 (0.0211)	Loss_recovery 0.0064 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 14/1000
+----------
+
+Updating target distribution:
+NMI: 0.03791	ARI: 0.01812	Acc 0.14680	
+Epoch: [14][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [14][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [14][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [14][40/40]	Loss 0.0174 (0.0211)	Loss_recovery 0.0061 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 15/1000
+----------
+
+Updating target distribution:
+NMI: 0.02790	ARI: 0.01092	Acc 0.13750	
+Epoch: [15][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [15][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [15][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [15][40/40]	Loss 0.0176 (0.0211)	Loss_recovery 0.0063 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 16/1000
+----------
+
+Updating target distribution:
+NMI: 0.03897	ARI: 0.02079	Acc 0.14950	
+Epoch: [16][10/40]	Loss 0.0211 (0.0213)	Loss_recovery 0.0098 (0.0100)	Loss clustering 0.0113 (0.0113)	
+Epoch: [16][20/40]	Loss 0.0213 (0.0212)	Loss_recovery 0.0100 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [16][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [16][40/40]	Loss 0.0172 (0.0212)	Loss_recovery 0.0059 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0099	Loss_clustering: 0.0113
+
+Epoch 17/1000
+----------
+
+Updating target distribution:
+NMI: 0.02947	ARI: 0.01205	Acc 0.13890	
+Epoch: [17][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [17][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [17][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [17][40/40]	Loss 0.0171 (0.0211)	Loss_recovery 0.0059 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 18/1000
+----------
+
+Updating target distribution:
+NMI: 0.03874	ARI: 0.02102	Acc 0.14910	
+Epoch: [18][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [18][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [18][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [18][40/40]	Loss 0.0170 (0.0211)	Loss_recovery 0.0057 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 19/1000
+----------
+
+Updating target distribution:
+NMI: 0.03072	ARI: 0.01417	Acc 0.14140	
+Epoch: [19][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [19][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [19][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [19][40/40]	Loss 0.0173 (0.0211)	Loss_recovery 0.0060 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 20/1000
+----------
+
+Updating target distribution:
+NMI: 0.03892	ARI: 0.02099	Acc 0.15060	
+Epoch: [20][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [20][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [20][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [20][40/40]	Loss 0.0169 (0.0211)	Loss_recovery 0.0056 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 21/1000
+----------
+
+Updating target distribution:
+NMI: 0.03202	ARI: 0.01460	Acc 0.14260	
+Epoch: [21][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [21][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [21][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [21][40/40]	Loss 0.0170 (0.0211)	Loss_recovery 0.0057 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 22/1000
+----------
+
+Updating target distribution:
+NMI: 0.03761	ARI: 0.02117	Acc 0.14700	
+Epoch: [22][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [22][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [22][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [22][40/40]	Loss 0.0167 (0.0211)	Loss_recovery 0.0054 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 23/1000
+----------
+
+Updating target distribution:
+NMI: 0.02904	ARI: 0.01329	Acc 0.14030	
+Epoch: [23][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [23][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [23][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [23][40/40]	Loss 0.0170 (0.0211)	Loss_recovery 0.0057 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 24/1000
+----------
+
+Updating target distribution:
+NMI: 0.03618	ARI: 0.02127	Acc 0.14700	
+Epoch: [24][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [24][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [24][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [24][40/40]	Loss 0.0166 (0.0211)	Loss_recovery 0.0053 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 25/1000
+----------
+
+Updating target distribution:
+NMI: 0.03041	ARI: 0.01502	Acc 0.14130	
+Epoch: [25][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [25][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [25][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [25][40/40]	Loss 0.0167 (0.0211)	Loss_recovery 0.0054 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 26/1000
+----------
+
+Updating target distribution:
+NMI: 0.03738	ARI: 0.02138	Acc 0.14850	
+Epoch: [26][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [26][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [26][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [26][40/40]	Loss 0.0165 (0.0211)	Loss_recovery 0.0052 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 27/1000
+----------
+
+Updating target distribution:
+NMI: 0.03289	ARI: 0.01744	Acc 0.14410	
+Epoch: [27][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [27][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [27][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [27][40/40]	Loss 0.0166 (0.0211)	Loss_recovery 0.0053 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 28/1000
+----------
+
+Updating target distribution:
+NMI: 0.03621	ARI: 0.02059	Acc 0.14780	
+Epoch: [28][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [28][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [28][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [28][40/40]	Loss 0.0164 (0.0211)	Loss_recovery 0.0051 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 29/1000
+----------
+
+Updating target distribution:
+NMI: 0.02900	ARI: 0.01348	Acc 0.13960	
+Epoch: [29][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [29][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [29][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [29][40/40]	Loss 0.0166 (0.0211)	Loss_recovery 0.0053 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 30/1000
+----------
+
+Updating target distribution:
+NMI: 0.03624	ARI: 0.01954	Acc 0.14690	
+Epoch: [30][10/40]	Loss 0.0209 (0.0212)	Loss_recovery 0.0096 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [30][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [30][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [30][40/40]	Loss 0.0163 (0.0211)	Loss_recovery 0.0050 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 31/1000
+----------
+
+Updating target distribution:
+NMI: 0.03260	ARI: 0.01741	Acc 0.14390	
+Epoch: [31][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [31][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [31][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [31][40/40]	Loss 0.0164 (0.0210)	Loss_recovery 0.0051 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 32/1000
+----------
+
+Updating target distribution:
+NMI: 0.03574	ARI: 0.02044	Acc 0.14720	
+Epoch: [32][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [32][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [32][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [32][40/40]	Loss 0.0162 (0.0211)	Loss_recovery 0.0049 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 33/1000
+----------
+
+Updating target distribution:
+NMI: 0.03232	ARI: 0.01774	Acc 0.14370	
+Epoch: [33][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [33][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [33][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [33][40/40]	Loss 0.0163 (0.0210)	Loss_recovery 0.0050 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 34/1000
+----------
+
+Updating target distribution:
+NMI: 0.03664	ARI: 0.02032	Acc 0.14750	
+Epoch: [34][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [34][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [34][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [34][40/40]	Loss 0.0161 (0.0211)	Loss_recovery 0.0048 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 35/1000
+----------
+
+Updating target distribution:
+NMI: 0.03307	ARI: 0.01760	Acc 0.14450	
+Epoch: [35][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [35][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [35][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [35][40/40]	Loss 0.0164 (0.0211)	Loss_recovery 0.0051 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 36/1000
+----------
+
+Updating target distribution:
+NMI: 0.03730	ARI: 0.02017	Acc 0.14840	
+Epoch: [36][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [36][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [36][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [36][40/40]	Loss 0.0160 (0.0211)	Loss_recovery 0.0048 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 37/1000
+----------
+
+Updating target distribution:
+NMI: 0.02838	ARI: 0.01182	Acc 0.13860	
+Epoch: [37][10/40]	Loss 0.0209 (0.0212)	Loss_recovery 0.0096 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [37][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [37][30/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [37][40/40]	Loss 0.0162 (0.0211)	Loss_recovery 0.0049 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 38/1000
+----------
+
+Updating target distribution:
+NMI: 0.03663	ARI: 0.02129	Acc 0.14880	
+Epoch: [38][10/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [38][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [38][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [38][40/40]	Loss 0.0159 (0.0211)	Loss_recovery 0.0046 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 39/1000
+----------
+
+Updating target distribution:
+NMI: 0.03042	ARI: 0.01552	Acc 0.14170	
+Epoch: [39][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [39][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [39][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [39][40/40]	Loss 0.0161 (0.0210)	Loss_recovery 0.0048 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 40/1000
+----------
+
+Updating target distribution:
+NMI: 0.03534	ARI: 0.02031	Acc 0.14760	
+Epoch: [40][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [40][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [40][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [40][40/40]	Loss 0.0159 (0.0211)	Loss_recovery 0.0046 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 41/1000
+----------
+
+Updating target distribution:
+NMI: 0.02650	ARI: 0.01185	Acc 0.13810	
+Epoch: [41][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [41][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [41][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [41][40/40]	Loss 0.0163 (0.0211)	Loss_recovery 0.0050 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 42/1000
+----------
+
+Updating target distribution:
+NMI: 0.03366	ARI: 0.01568	Acc 0.14350	
+Epoch: [42][10/40]	Loss 0.0211 (0.0214)	Loss_recovery 0.0098 (0.0101)	Loss clustering 0.0113 (0.0113)	
+Epoch: [42][20/40]	Loss 0.0212 (0.0213)	Loss_recovery 0.0099 (0.0100)	Loss clustering 0.0113 (0.0113)	
+Epoch: [42][30/40]	Loss 0.0211 (0.0212)	Loss_recovery 0.0098 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [42][40/40]	Loss 0.0160 (0.0212)	Loss_recovery 0.0048 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0212	Loss_recovery: 0.0099	Loss_clustering: 0.0113
+
+Epoch 43/1000
+----------
+
+Updating target distribution:
+NMI: 0.02788	ARI: 0.01166	Acc 0.13900	
+Epoch: [43][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [43][20/40]	Loss 0.0212 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [43][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [43][40/40]	Loss 0.0160 (0.0211)	Loss_recovery 0.0047 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 44/1000
+----------
+
+Updating target distribution:
+NMI: 0.03507	ARI: 0.01873	Acc 0.14580	
+Epoch: [44][10/40]	Loss 0.0210 (0.0212)	Loss_recovery 0.0097 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [44][20/40]	Loss 0.0212 (0.0212)	Loss_recovery 0.0099 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [44][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [44][40/40]	Loss 0.0159 (0.0211)	Loss_recovery 0.0046 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 45/1000
+----------
+
+Updating target distribution:
+NMI: 0.03088	ARI: 0.01488	Acc 0.14230	
+Epoch: [45][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [45][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [45][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [45][40/40]	Loss 0.0158 (0.0210)	Loss_recovery 0.0045 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 46/1000
+----------
+
+Updating target distribution:
+NMI: 0.03530	ARI: 0.02007	Acc 0.14790	
+Epoch: [46][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [46][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [46][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [46][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 47/1000
+----------
+
+Updating target distribution:
+NMI: 0.03026	ARI: 0.01539	Acc 0.14200	
+Epoch: [47][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [47][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [47][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [47][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 48/1000
+----------
+
+Updating target distribution:
+NMI: 0.03445	ARI: 0.01975	Acc 0.14630	
+Epoch: [48][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [48][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [48][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [48][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 49/1000
+----------
+
+Updating target distribution:
+NMI: 0.02903	ARI: 0.01458	Acc 0.14090	
+Epoch: [49][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [49][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [49][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [49][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 50/1000
+----------
+
+Updating target distribution:
+NMI: 0.03534	ARI: 0.01974	Acc 0.14740	
+Epoch: [50][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [50][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [50][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [50][40/40]	Loss 0.0155 (0.0210)	Loss_recovery 0.0042 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 51/1000
+----------
+
+Updating target distribution:
+NMI: 0.02825	ARI: 0.01445	Acc 0.14130	
+Epoch: [51][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [51][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [51][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [51][40/40]	Loss 0.0156 (0.0210)	Loss_recovery 0.0043 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 52/1000
+----------
+
+Updating target distribution:
+NMI: 0.03523	ARI: 0.01934	Acc 0.14740	
+Epoch: [52][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [52][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [52][30/40]	Loss 0.0210 (0.0210)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [52][40/40]	Loss 0.0154 (0.0210)	Loss_recovery 0.0041 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 53/1000
+----------
+
+Updating target distribution:
+NMI: 0.02945	ARI: 0.01650	Acc 0.14320	
+Epoch: [53][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [53][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [53][30/40]	Loss 0.0210 (0.0210)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [53][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 54/1000
+----------
+
+Updating target distribution:
+NMI: 0.03420	ARI: 0.01790	Acc 0.14550	
+Epoch: [54][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [54][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [54][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [54][40/40]	Loss 0.0154 (0.0210)	Loss_recovery 0.0041 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 55/1000
+----------
+
+Updating target distribution:
+NMI: 0.03001	ARI: 0.01696	Acc 0.14330	
+Epoch: [55][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [55][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [55][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [55][40/40]	Loss 0.0158 (0.0210)	Loss_recovery 0.0045 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 56/1000
+----------
+
+Updating target distribution:
+NMI: 0.03390	ARI: 0.01725	Acc 0.14530	
+Epoch: [56][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0099)	Loss clustering 0.0113 (0.0113)	
+Epoch: [56][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [56][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [56][40/40]	Loss 0.0154 (0.0211)	Loss_recovery 0.0041 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0211	Loss_recovery: 0.0098	Loss_clustering: 0.0113
+
+Epoch 57/1000
+----------
+
+Updating target distribution:
+NMI: 0.02870	ARI: 0.01557	Acc 0.14190	
+Epoch: [57][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [57][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0099 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [57][30/40]	Loss 0.0210 (0.0210)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [57][40/40]	Loss 0.0157 (0.0210)	Loss_recovery 0.0044 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 58/1000
+----------
+
+Updating target distribution:
+NMI: 0.03539	ARI: 0.02011	Acc 0.14800	
+Epoch: [58][10/40]	Loss 0.0209 (0.0211)	Loss_recovery 0.0096 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [58][20/40]	Loss 0.0211 (0.0211)	Loss_recovery 0.0098 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [58][30/40]	Loss 0.0210 (0.0211)	Loss_recovery 0.0097 (0.0098)	Loss clustering 0.0113 (0.0113)	
+Epoch: [58][40/40]	Loss 0.0152 (0.0210)	Loss_recovery 0.0040 (0.0097)	Loss clustering 0.0113 (0.0113)	
+Loss: 0.0210	Loss_recovery: 0.0097	Loss_clustering: 0.0113
+
+Epoch 59/1000
+----------
+
+Updating target distribution:

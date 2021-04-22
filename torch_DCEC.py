@@ -8,6 +8,7 @@ if __name__ == "__main__":
     import torch.optim as optim
     from torch.optim import lr_scheduler
     from torchvision import datasets, models, transforms
+    from geomloss import SamplesLoss
     import os
     import math
     import fnmatch
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     parser.add_argument('--pretrained_net', default=1, help='index or path of pretrained net')
     parser.add_argument('--net_architecture', default='CAE_3', choices=['CAE_3', 'CAE_bn3', 'CAE_4', 'CAE_bn4', 'CAE_5', 'CAE_bn5'], help='network architecture used')
     parser.add_argument('--dataset', default='MNIST-train',
-                        choices=['MNIST-train', 'custom', 'MNIST-test', 'MNIST-full'],
+                        choices=['MNIST-train', 'custom', 'MNIST-test', 'MNIST-full','CIFAR-10-train','CIFAR-10-test'],
                         help='custom or prepared dataset')
     parser.add_argument('--dataset_path', default='data', help='path to dataset')
     parser.add_argument('--batch_size', default=256, type=int, help='batch size')
@@ -251,7 +252,7 @@ if __name__ == "__main__":
                                                            # transforms.Normalize((0.1307,), (0.3081,))
                                                            ]))
                             #transform.Compose将变换组合起来，ToTensor将图片或者numpy数组转化为tensor数据（从[0,255]到[0,1]），Normalize进行归一化，从[0,1]到[-1,1]
-
+        # print dataset
         dataloader = torch.utils.data.DataLoader(dataset,
             batch_size=batch, shuffle=False, num_workers=workers)
 
@@ -300,6 +301,52 @@ if __name__ == "__main__":
         dataset_size = len(dataset)
         tmp = "Training set size:\t" + str(dataset_size)
         utils.print_both(f, tmp)
+    
+    elif dataset == 'CIFAR-10-train':
+        # Uses slightly modified torchvision MNIST class
+        import mnist
+        tmp = "\nData preparation\nReading data from: CIFAR-10 train dataset"
+        utils.print_both(f, tmp)
+        img_size = [32, 32, 3]
+        tmp = "Image size used:\t{0}x{1}".format(img_size[0], img_size[1])
+        utils.print_both(f, tmp)
+
+        dataset = mnist.CIFAR10('../data/cifar-10-batches-py', train=True,      #MNIST继承torch.utils.data.Dataset
+                              transform=transforms.Compose([
+                                                           transforms.ToTensor(),
+                                                           # transforms.Normalize((0.1307,), (0.3081,))
+                                                           ]))
+                            #transform.Compose将变换组合起来，ToTensor将图片或者numpy数组转化为tensor数据（从[0,255]到[0,1]），Normalize进行归一化，从[0,1]到[-1,1]
+        # print dataset
+        dataloader = torch.utils.data.DataLoader(dataset,
+            batch_size=batch, shuffle=False, num_workers=workers)
+
+        dataset_size = len(dataset)
+        tmp = "Training set size:\t" + str(dataset_size)
+        utils.print_both(f, tmp)
+
+    elif dataset == 'CIFAR-10-test':
+        # Uses slightly modified torchvision MNIST class
+        import mnist
+        tmp = "\nData preparation\nReading data from: CIFAR-10 train dataset"
+        utils.print_both(f, tmp)
+        img_size = [32, 32, 3]
+        tmp = "Image size used:\t{0}x{1}".format(img_size[0], img_size[1])
+        utils.print_both(f, tmp)
+
+        dataset = mnist.CIFAR10('../data/cifar-10-batches-py', train=False,      #MNIST继承torch.utils.data.Dataset
+                              transform=transforms.Compose([
+                                                           transforms.ToTensor(),
+                                                           # transforms.Normalize((0.1307,), (0.3081,))
+                                                           ]))
+                            #transform.Compose将变换组合起来，ToTensor将图片或者numpy数组转化为tensor数据（从[0,255]到[0,1]），Normalize进行归一化，从[0,1]到[-1,1]
+        # print dataset
+        dataloader = torch.utils.data.DataLoader(dataset,
+            batch_size=batch, shuffle=False, num_workers=workers)
+
+        dataset_size = len(dataset)
+        tmp = "Training set size:\t" + str(dataset_size)
+        utils.print_both(f, tmp)
 
     else:
         # Data folder
@@ -310,7 +357,7 @@ if __name__ == "__main__":
         # Image size
         custom_size = math.nan
         custom_size = args.custom_img_size
-        if isinstance(custom_size, list):
+        if isinstance(custom_size, list):  #判断custom_size是否为list
             img_size = custom_size
 
         tmp = "Image size used:\t{0}x{1}".format(img_size[0], img_size[1])
@@ -354,8 +401,8 @@ if __name__ == "__main__":
     model = model.to(device) #将模型加载到指定设备上
     # Reconstruction loss
     criterion_1 = nn.MSELoss(reduction='mean')
-    # Clustering loss  在这里可以更改损失函数为OT
-    criterion_2 = nn.KLDivLoss(reduction='sum')
+    # Clustering loss  将损失函数改为OT
+    criterion_2 = SamplesLoss(loss="sinkhorn", p=2, blur=.05)
 
     criteria = [criterion_1, criterion_2]
 

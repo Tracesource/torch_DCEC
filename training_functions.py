@@ -41,8 +41,10 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
                         layer.reset_parameters()      #reset函数的意义？？
         model = pretrained_model
     else:
+        print("pretrained:",pretrained)
         try:
-            model.load_state_dict(torch.load(pretrained))
+            model.load_state_dict(torch.load('nets/' + str(pretrained)))
+            # model.load_state_dict(torch.load(pretrained))
             utils.print_both(txt_file, 'Pretrained weights loaded from file: ' + str(pretrained))
         except:
             print("Couldn't load pretrained weights")
@@ -142,7 +144,6 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
                 loss.backward()
                 optimizers[0].step()
 
-            # For keeping statistics 将epoch内的误差累加
             running_loss += loss.item() * inputs.size(0)
             running_loss_rec += loss_rec.item() * inputs.size(0)
             running_loss_clust += loss_clust.item() * inputs.size(0)

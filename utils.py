@@ -44,7 +44,6 @@ class metrics:
         # from sklearn.utils.linear_assignment_ import linear_assignment
         ind = linear_assignment(w.max() - w)
         # print("ind")
-        print(ind)
         sum_w = 0
         for i in range(len(ind[0])):
             sum_w += w[ind[0][i],ind[1][i]]
