@@ -26,6 +26,7 @@ if __name__ == "__main__":
         else:
             raise argparse.ArgumentTypeError('Boolean value expected.')
 
+    #可设置参数
     parser = argparse.ArgumentParser(description='Use DCEC for clustering')
     parser.add_argument('--mode', default='train_full', choices=['train_full', 'pretrain'], help='mode')
     parser.add_argument('--tensorboard', default=True, type=bool, help='export training stats to tensorboard')
@@ -33,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument('--pretrained_net', default=1, help='index or path of pretrained net')
     parser.add_argument('--net_architecture', default='CAE_3', choices=['CAE_3', 'CAE_bn3', 'CAE_4', 'CAE_bn4', 'CAE_5', 'CAE_bn5'], help='network architecture used')
     parser.add_argument('--dataset', default='MNIST-train',
-                        choices=['MNIST-train', 'custom', 'MNIST-test', 'MNIST-full','CIFAR-10-train','CIFAR-10-test'],
+                        choices=['MNIST-train', 'custom', 'MNIST-test', 'MNIST-full','CIFAR-10-full','CIFAR-10-test','imagenet10'],
                         help='custom or prepared dataset')
     parser.add_argument('--dataset_path', default='data', help='path to dataset')
     parser.add_argument('--batch_size', default=256, type=int, help='batch size')
@@ -191,50 +192,52 @@ if __name__ == "__main__":
     num_clusters = args.num_clusters
 
     # Report for settings  在reports里打印设置
-    tmp = "Training the '" + model_name + "' architecture"
-    utils.print_both(f, tmp)
-    tmp = "\n" + "The following parameters are used:"
-    utils.print_both(f, tmp)
-    tmp = "Batch size:\t" + str(batch)
-    utils.print_both(f, tmp)
-    tmp = "Number of workers:\t" + str(workers)
-    utils.print_both(f, tmp)
-    tmp = "Learning rate:\t" + str(rate)
-    utils.print_both(f, tmp)
-    tmp = "Pretraining learning rate:\t" + str(rate_pretrain)
-    utils.print_both(f, tmp)
-    tmp = "Weight decay:\t" + str(weight)
-    utils.print_both(f, tmp)
-    tmp = "Pretraining weight decay:\t" + str(weight_pretrain)
-    utils.print_both(f, tmp)
-    tmp = "Scheduler steps:\t" + str(sched_step)
-    utils.print_both(f, tmp)
-    tmp = "Scheduler gamma:\t" + str(sched_gamma)
-    utils.print_both(f, tmp)
-    tmp = "Pretraining scheduler steps:\t" + str(sched_step_pretrain)
-    utils.print_both(f, tmp)
-    tmp = "Pretraining scheduler gamma:\t" + str(sched_gamma_pretrain)
-    utils.print_both(f, tmp)
-    tmp = "Number of epochs of training:\t" + str(epochs)
-    utils.print_both(f, tmp)
-    tmp = "Number of epochs of pretraining:\t" + str(pretrain_epochs)
-    utils.print_both(f, tmp)
-    tmp = "Clustering loss weight:\t" + str(gamma)
-    utils.print_both(f, tmp)
-    tmp = "Update interval for target distribution:\t" + str(update_interval)
-    utils.print_both(f, tmp)
-    tmp = "Stop criterium tolerance:\t" + str(tol)
-    utils.print_both(f, tmp)
-    tmp = "Number of clusters:\t" + str(num_clusters)
-    utils.print_both(f, tmp)
-    tmp = "Leaky relu:\t" + str(args.leaky)
-    utils.print_both(f, tmp)
-    tmp = "Leaky slope:\t" + str(args.neg_slope)
-    utils.print_both(f, tmp)
-    tmp = "Activations:\t" + str(args.activations)
-    utils.print_both(f, tmp)
-    tmp = "Bias:\t" + str(args.bias)
-    utils.print_both(f, tmp)
+    report = True
+    if report:
+        tmp = "Training the '" + model_name + "' architecture"
+        utils.print_both(f, tmp)
+        tmp = "\n" + "The following parameters are used:"
+        utils.print_both(f, tmp)
+        tmp = "Batch size:\t" + str(batch)
+        utils.print_both(f, tmp)
+        tmp = "Number of workers:\t" + str(workers)
+        utils.print_both(f, tmp)
+        tmp = "Learning rate:\t" + str(rate)
+        utils.print_both(f, tmp)
+        tmp = "Pretraining learning rate:\t" + str(rate_pretrain)
+        utils.print_both(f, tmp)
+        tmp = "Weight decay:\t" + str(weight)
+        utils.print_both(f, tmp)
+        tmp = "Pretraining weight decay:\t" + str(weight_pretrain)
+        utils.print_both(f, tmp)
+        tmp = "Scheduler steps:\t" + str(sched_step)
+        utils.print_both(f, tmp)
+        tmp = "Scheduler gamma:\t" + str(sched_gamma)
+        utils.print_both(f, tmp)
+        tmp = "Pretraining scheduler steps:\t" + str(sched_step_pretrain)
+        utils.print_both(f, tmp)
+        tmp = "Pretraining scheduler gamma:\t" + str(sched_gamma_pretrain)
+        utils.print_both(f, tmp)
+        tmp = "Number of epochs of training:\t" + str(epochs)
+        utils.print_both(f, tmp)
+        tmp = "Number of epochs of pretraining:\t" + str(pretrain_epochs)
+        utils.print_both(f, tmp)
+        tmp = "Clustering loss weight:\t" + str(gamma)
+        utils.print_both(f, tmp)
+        tmp = "Update interval for target distribution:\t" + str(update_interval)
+        utils.print_both(f, tmp)
+        tmp = "Stop criterium tolerance:\t" + str(tol)
+        utils.print_both(f, tmp)
+        tmp = "Number of clusters:\t" + str(num_clusters)
+        utils.print_both(f, tmp)
+        tmp = "Leaky relu:\t" + str(args.leaky)
+        utils.print_both(f, tmp)
+        tmp = "Leaky slope:\t" + str(args.neg_slope)
+        utils.print_both(f, tmp)
+        tmp = "Activations:\t" + str(args.activations)
+        utils.print_both(f, tmp)
+        tmp = "Bias:\t" + str(args.bias)
+        utils.print_both(f, tmp)
 
     # Data preparation  train数据集train属性为true，test数据集train属性为false，full数据集full属性为true
     if dataset == 'MNIST-train':
@@ -302,7 +305,7 @@ if __name__ == "__main__":
         tmp = "Training set size:\t" + str(dataset_size)
         utils.print_both(f, tmp)
     
-    elif dataset == 'CIFAR-10-train':
+    elif dataset == 'CIFAR-10-full':
         # Uses slightly modified torchvision MNIST class
         import mnist
         tmp = "\nData preparation\nReading data from: CIFAR-10 train dataset"
@@ -399,12 +402,14 @@ if __name__ == "__main__":
     #     writer.add_graph(model, torch.autograd.Variable(torch.Tensor(batch, img_size[2], img_size[0], img_size[1])))
 
     model = model.to(device) #将模型加载到指定设备上
-    # Reconstruction loss
+    # Reconstruction loss 将损失函数改为OT
+    # criterion_1 = nn.MSELoss(reduction='mean')
     criterion_1 = nn.MSELoss(reduction='mean')
-    # Clustering loss  将损失函数改为OT
     criterion_2 = SamplesLoss(loss="sinkhorn", p=2, blur=.05)
+    # Clustering loss  
+    criterion_3 = nn.KLDivLoss(size_average=False)
 
-    criteria = [criterion_1, criterion_2]
+    criteria = [criterion_1, criterion_2, criterion_3]
 
     optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=rate, weight_decay=weight)  #使用filter根据requires_grad对参数进行过滤
 

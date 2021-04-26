@@ -70,6 +70,9 @@ class MNIST(data.Dataset):
                 self.train_labels = self.train_labels[0:1200]
             self.test_data = self.test_data[0:200]
             self.test_labels = self.test_labels[0:200]
+        
+        # print("train_data.shape",self.train_data.shape)
+        # print("train_label.shape",self.train_labels.shape)
 
     def __getitem__(self, index):
         """
@@ -180,6 +183,10 @@ class CIFAR10(data.Dataset):
         self.train_data,self.train_labels = self.load_CIFAR10_train()
         # 测试集
         self.test_data, self.test_labels = self.load_CIFAR10_test()
+        self.train_data = np.concatenate((self.train_data, self.test_data), axis=0)
+        self.train_labels = np.concatenate((self.train_labels, self.test_labels), axis=0)
+        print("train_data.shape",self.train_data.shape)
+        print("train_labels.shape",self.train_labels.shape)
 
     def __getitem__(self, index):
         if self.train:

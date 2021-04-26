@@ -1,0 +1,103 @@
+Training the 'CAE_3' architecture
+
+The following parameters are used:
+Batch size:	256
+Number of workers:	4
+Learning rate:	0.001
+Pretraining learning rate:	0.001
+Weight decay:	0.0
+Pretraining weight decay:	0.0
+Scheduler steps:	200
+Scheduler gamma:	0.1
+Pretraining scheduler steps:	200
+Pretraining scheduler gamma:	0.1
+Number of epochs of training:	1000
+Number of epochs of pretraining:	300
+Clustering loss weight:	0.1
+Update interval for target distribution:	80
+Stop criterium tolerance:	0.01
+Number of clusters:	10
+Leaky relu:	True
+Leaky slope:	0.01
+Activations:	False
+Bias:	True
+
+Data preparation
+Reading data from: MNIST train dataset
+Image size used:	28x28
+Training set size:	60000
+
+Performing calculations on:	cuda:0
+
+Pretrained weights loaded from file: CAE_3_007_pretrained.pt
+
+Initializing cluster centers based on K-means
+
+Begin clusters training
+
+Updating target distribution
+NMI: 0.77940	ARI: 0.73811	Acc 0.84508
+
+Epoch 1/1000
+----------
+Epoch: [1][10/235]	Loss 0.0220 (0.0250)	Loss_recovery 0.0088 (0.0097)	Loss clustering 0.0132 (0.0154)	
+Epoch: [1][20/235]	Loss 0.0227 (0.0241)	Loss_recovery 0.0098 (0.0096)	Loss clustering 0.0129 (0.0145)	
+Epoch: [1][30/235]	Loss 0.0208 (0.0231)	Loss_recovery 0.0089 (0.0095)	Loss clustering 0.0120 (0.0136)	
+Epoch: [1][40/235]	Loss 0.0197 (0.0226)	Loss_recovery 0.0096 (0.0096)	Loss clustering 0.0101 (0.0130)	
+Epoch: [1][50/235]	Loss 0.0204 (0.0221)	Loss_recovery 0.0102 (0.0096)	Loss clustering 0.0102 (0.0125)	
+Epoch: [1][60/235]	Loss 0.0205 (0.0217)	Loss_recovery 0.0098 (0.0096)	Loss clustering 0.0107 (0.0120)	
+Epoch: [1][70/235]	Loss 0.0190 (0.0214)	Loss_recovery 0.0096 (0.0097)	Loss clustering 0.0094 (0.0117)	
+Epoch: [1][80/235]	Loss 0.0188 (0.0211)	Loss_recovery 0.0092 (0.0097)	Loss clustering 0.0096 (0.0114)	
+
+Updating target distribution:
+NMI: 0.80762	ARI: 0.77113	Acc 0.86157	
+Epoch: [1][90/235]	Loss 0.0352 (0.0226)	Loss_recovery 0.0109 (0.0097)	Loss clustering 0.0243 (0.0129)	
+Epoch: [1][100/235]	Loss 0.0346 (0.0238)	Loss_recovery 0.0110 (0.0099)	Loss clustering 0.0236 (0.0139)	
+Epoch: [1][110/235]	Loss 0.0345 (0.0247)	Loss_recovery 0.0109 (0.0101)	Loss clustering 0.0236 (0.0146)	
+Epoch: [1][120/235]	Loss 0.0307 (0.0253)	Loss_recovery 0.0117 (0.0103)	Loss clustering 0.0190 (0.0151)	
+Epoch: [1][130/235]	Loss 0.0303 (0.0258)	Loss_recovery 0.0112 (0.0104)	Loss clustering 0.0191 (0.0154)	
+Epoch: [1][140/235]	Loss 0.0314 (0.0262)	Loss_recovery 0.0118 (0.0105)	Loss clustering 0.0197 (0.0157)	
+Epoch: [1][150/235]	Loss 0.0321 (0.0266)	Loss_recovery 0.0137 (0.0107)	Loss clustering 0.0184 (0.0160)	
+Epoch: [1][160/235]	Loss 0.0325 (0.0269)	Loss_recovery 0.0118 (0.0107)	Loss clustering 0.0207 (0.0162)	
+
+Updating target distribution:
+NMI: 0.82979	ARI: 0.79583	Acc 0.87165	
+Epoch: [1][170/235]	Loss 0.0413 (0.0277)	Loss_recovery 0.0129 (0.0109)	Loss clustering 0.0284 (0.0169)	
+Epoch: [1][180/235]	Loss 0.0396 (0.0284)	Loss_recovery 0.0139 (0.0110)	Loss clustering 0.0257 (0.0174)	
+Epoch: [1][190/235]	Loss 0.0410 (0.0291)	Loss_recovery 0.0139 (0.0111)	Loss clustering 0.0271 (0.0179)	
+Epoch: [1][200/235]	Loss 0.0390 (0.0296)	Loss_recovery 0.0123 (0.0113)	Loss clustering 0.0266 (0.0183)	
+Epoch: [1][210/235]	Loss 0.0402 (0.0301)	Loss_recovery 0.0138 (0.0114)	Loss clustering 0.0264 (0.0187)	
+Epoch: [1][220/235]	Loss 0.0392 (0.0305)	Loss_recovery 0.0138 (0.0115)	Loss clustering 0.0254 (0.0191)	
+Epoch: [1][230/235]	Loss 0.0394 (0.0309)	Loss_recovery 0.0131 (0.0116)	Loss clustering 0.0263 (0.0194)	
+Loss: 0.0311	Loss_recovery: 0.0116	Loss_clustering: 0.0195
+
+Epoch 2/1000
+----------
+
+Updating target distribution:
+NMI: 0.84095	ARI: 0.80894	Acc 0.87598	
+Epoch: [2][10/235]	Loss 0.0432 (0.0433)	Loss_recovery 0.0128 (0.0132)	Loss clustering 0.0304 (0.0301)	
+Epoch: [2][20/235]	Loss 0.0426 (0.0433)	Loss_recovery 0.0136 (0.0134)	Loss clustering 0.0290 (0.0299)	
+Epoch: [2][30/235]	Loss 0.0414 (0.0432)	Loss_recovery 0.0132 (0.0135)	Loss clustering 0.0283 (0.0297)	
+Epoch: [2][40/235]	Loss 0.0425 (0.0432)	Loss_recovery 0.0138 (0.0137)	Loss clustering 0.0288 (0.0295)	
+Epoch: [2][50/235]	Loss 0.0438 (0.0430)	Loss_recovery 0.0146 (0.0136)	Loss clustering 0.0292 (0.0293)	
+Epoch: [2][60/235]	Loss 0.0431 (0.0428)	Loss_recovery 0.0144 (0.0137)	Loss clustering 0.0287 (0.0291)	
+Epoch: [2][70/235]	Loss 0.0410 (0.0427)	Loss_recovery 0.0141 (0.0138)	Loss clustering 0.0269 (0.0289)	
+Epoch: [2][80/235]	Loss 0.0407 (0.0426)	Loss_recovery 0.0129 (0.0138)	Loss clustering 0.0277 (0.0288)	
+
+Updating target distribution:
+NMI: 0.84935	ARI: 0.81728	Acc 0.87798	
+Epoch: [2][90/235]	Loss 0.0461 (0.0429)	Loss_recovery 0.0139 (0.0138)	Loss clustering 0.0322 (0.0291)	
+Epoch: [2][100/235]	Loss 0.0444 (0.0431)	Loss_recovery 0.0132 (0.0138)	Loss clustering 0.0312 (0.0293)	
+Epoch: [2][110/235]	Loss 0.0445 (0.0432)	Loss_recovery 0.0131 (0.0138)	Loss clustering 0.0315 (0.0294)	
+Epoch: [2][120/235]	Loss 0.0435 (0.0433)	Loss_recovery 0.0138 (0.0139)	Loss clustering 0.0297 (0.0295)	
+Epoch: [2][130/235]	Loss 0.0429 (0.0434)	Loss_recovery 0.0133 (0.0139)	Loss clustering 0.0295 (0.0295)	
+Epoch: [2][140/235]	Loss 0.0436 (0.0434)	Loss_recovery 0.0138 (0.0139)	Loss clustering 0.0298 (0.0295)	
+Epoch: [2][150/235]	Loss 0.0453 (0.0435)	Loss_recovery 0.0162 (0.0140)	Loss clustering 0.0292 (0.0296)	
+Epoch: [2][160/235]	Loss 0.0450 (0.0436)	Loss_recovery 0.0138 (0.0140)	Loss clustering 0.0312 (0.0296)	
+
+Updating target distribution:
+NMI: 0.85706	ARI: 0.82523	Acc 0.88082	
+Label divergence 0.008966666666666666< tol 0.01
+Reached tolerance threshold. Stopping training.
+Training complete in 0m 57s

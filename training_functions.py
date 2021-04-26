@@ -4,6 +4,9 @@ import torch
 import numpy as np
 import copy
 from sklearn.cluster import KMeans
+import random
+import numpy as np
+
 
 
 # Training function (from my torch_DCEC implementation, kept for completeness)
@@ -38,7 +41,7 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
             else:
                 for layer in model.children():  #model.children()是迭代器，仅会遍历当前层。
                     if hasattr(layer, 'reset_parameters'):   #判断对象是否包含对应属性
-                        layer.reset_parameters()      #reset函数的意义？？
+                        layer.reset_parameters()      
         model = pretrained_model
     else:
         print("pretrained:",pretrained)
@@ -51,7 +54,12 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
 
     # Initialise clusters
     utils.print_both(txt_file, '\nInitializing cluster centers based on K-means')
+    # for seed in range(0,30):
+    seed = 23
+    random.seed(seed)
+    np.random.seed(seed)
     kmeans(model, copy.deepcopy(dl), params)
+    utils.print_both(txt_file, 'seed: {}'.format(seed))
 
     utils.print_both(txt_file, '\nBegin clusters training')
 
@@ -67,8 +75,11 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
     ari = utils.metrics.ari(labels, preds_prev)
     acc = utils.metrics.acc(labels, preds_prev)
     utils.print_both(txt_file,
-                     'NMI: {0:.5f}\tARI: {1:.5f}\tAcc {2:.5f}\n'.format(nmi, ari, acc))
+                    'NMI: {0:.5f}\tARI: {1:.5f}\tAcc {2:.5f}\n'.format(nmi, ari, acc))
 
+    #寻找seed
+    # return model
+    
     if board:
         niter = 0
         writer.add_scalar('/NMI', nmi, niter)
@@ -138,12 +149,24 @@ def train_model(model, dataloader, criteria, optimizers, schedulers, num_epochs,
             # Calculate losses and backpropagate
             with torch.set_grad_enabled(True):
                 outputs, clusters, _ = model(inputs)
-                loss_rec = criteria[0](outputs, inputs)    #计算重构误差
-                loss_clust = gamma *criteria[1](torch.log(clusters), tar_dist) / batch   #计算聚类损失
+                size_inputs = inputs.shape
+                size_outputs = outputs.shape
+                with torch.no_grad():
+                    a = inputs.clone()
+                    a.resize_(size_inputs[0],size_inputs[1],size_inputs[2]*size_inputs[3])  
+                    b = outputs.clone()
+                    b.resize_(size_outputs[0],size_outputs[1],size_outputs[2]*size_outputs[3])
+                # print("a.shape",a.shape)
+                # print("b.shape",b.shape)
+                # loss_rec = criteria[1](a, b)    #计算重构误差
+                # loss_rec = torch.sum(loss_rec) / batch
+                loss_rec = criteria[0](inputs, outputs) 
+                # loss_rec = criteria[0](inputs, outputs)
+                loss_clust = gamma *criteria[2](torch.log(clusters), tar_dist) / batch   #计算聚类损失
                 loss = loss_rec + loss_clust
+                # print("loss_rec=",loss_rec,"loss_clust=",loss_clust,"loss=",loss)
                 loss.backward()
                 optimizers[0].step()
-
             running_loss += loss.item() * inputs.size(0)
             running_loss_rec += loss_rec.item() * inputs.size(0)
             running_loss_clust += loss_clust.item() * inputs.size(0)
@@ -251,7 +274,7 @@ def pretraining(model, dataloader, criterion, optimizer, scheduler, num_epochs, 
         # Iterate over data.
         for data in dataloader:
             # Get the inputs and labels
-            inputs, _ = data
+            inputs,_= data
             inputs = inputs.to(device)
 
             # zero the parameter gradients
@@ -259,11 +282,11 @@ def pretraining(model, dataloader, criterion, optimizer, scheduler, num_epochs, 
 
             with torch.set_grad_enabled(True):
                 outputs, _, _ = model(inputs)
-                loss = criterion(outputs, inputs)
+                loss = criterion(inputs, outputs)
                 loss.backward()
                 optimizer.step()
 
-            # For keeping statistics
+            #  
             running_loss += loss.item() * inputs.size(0)
 
             # Some current stats
